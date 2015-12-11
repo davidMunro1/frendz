@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: hibernate-commons-annotations-4.0.2.Final.jar hibernate-jp
+ a-2.0-api-1.0.1.Final.jar antlr-2.7.7.jar jboss-logging-3.1.0.GA.jar 
+ dom4j-1.6.1.jar javassist-3.15.0-GA.jar jboss-transaction-api_1.1_spe
+ c-1.0.1.Final.jar hibernate-core-4.2.2.Final.jar
+
