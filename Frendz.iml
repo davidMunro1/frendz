@@ -29,7 +29,7 @@
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$USER_HOME$/Documents/appengine-java-sdk-1.9.30</sdk-home-path>
+        <sdk-home-path>$USER_HOME$/Desktop/appengine-java-sdk-1.9.30</sdk-home-path>
       </configuration>
     </facet>
     <facet type="javaeeApplication" name="javaEEApplication">
@@ -45,12 +45,14 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0 - EJB" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="AppEngine Dev 1.9.30" level="application_server_libraries" />
     <orderEntry type="library" name="AppEngine API" level="project" />
+    <orderEntry type="library" name="javax.mail:javax.mail-api:1.5.4" level="project" />
+    <orderEntry type="library" name="javax.activation:activation:1.1" level="project" />
   </component>
 </module>

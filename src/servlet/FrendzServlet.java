@@ -1,6 +1,8 @@
 package servlet;
 
 import beans.UserBeanBean;
+import utils.MailSender;
+
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,14 @@ import java.io.IOException;
 @WebServlet(name = "FrendzServlet")
 public class FrendzServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//        System.out.println("post method");
+        if(request.getParameter("button").equalsIgnoreCase("login")) {
+            System.out.println("Login");
+            validateLogin(request.getParameter("email"), request.getParameter("password"));
+        } else {
+            System.out.println("signup");
+            handleSignUp(request);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,5 +32,15 @@ public class FrendzServlet extends HttpServlet {
         System.out.println("Value = "+type);
         UserBeanBean bean = new UserBeanBean();
 
+    }
+
+    private boolean validateLogin(String email, String password) {
+        return true;
+    }
+
+    private void handleSignUp(HttpServletRequest request) {
+        //save data to the DB
+        MailSender mailSender = new MailSender();
+        mailSender.sendMessage();
     }
 }

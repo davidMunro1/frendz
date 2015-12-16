@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
     <title></title>
 </head>
-<body>
-    <h1>Login</h1>
-    <form action="FrendzServlet" method="get">
-        <input name="userName" type="text">
-        <input name="password" type="text">
-        <input type="submit" value="Login" name="button">
-    </form>
+<body id="bgr" class="center">
+
+<div class="container">
+    <div class="form center-vertical">
+        <img id="logo" src="images/logo.png">
+        <form action="FrendzServlet" method="post" id="login">
+            <input name="email" placeholder="E-mail" type="text"><br>
+            <input name="password" placeholder="Password" type="password"><br>
+            <input id="button" type="submit" name="button" value="Login">
+        </form>
+        <a href="signup.html"><div>Don't have an account yet? Sign up here!</div></a>
+    </div>
+</div>
+
 </body>
 </html>
