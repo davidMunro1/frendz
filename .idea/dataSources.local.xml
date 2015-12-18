@@ -7,5 +7,11 @@
       <schema-pattern>smarthousetestdatabase.*</schema-pattern>
       <default-schemas>smarthousetestdatabase.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - FrendzDB@173.194.252.254" uuid="966da56c-0f2e-4254-ae02-49fdce417982">
+      <secret-storage>master_key</secret-storage>
+      <user-name>david</user-name>
+      <schema-pattern>FrendzDB.*</schema-pattern>
+      <default-schemas>FrendzDB.*</default-schemas>
+    </data-source>
   </component>
 </project>
