@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Frendz:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="Frendz:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Frendz_war_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="Frendz/web/Web" />
@@ -9,6 +9,8 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="AppEngine API" />
+          <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+          <element id="library" level="project" name="javax.ejb" />
         </element>
       </element>
     </root>

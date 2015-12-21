@@ -5,7 +5,7 @@ import utils.MailSender;
 
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,10 +14,10 @@ import java.io.IOException;
 /**
  * Created by davidmunro on 08/12/2015.
  */
-@WebServlet(name = "FrendzServlet")
+//@WebServlet(name = "FrendzServlet")
 public class FrendzServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        System.out.println("post method");
+        System.out.println("post method");
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("Login");
             validateLogin(request.getParameter("email"), request.getParameter("password"));

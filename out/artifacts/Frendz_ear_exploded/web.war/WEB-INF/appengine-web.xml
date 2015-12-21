@@ -3,4 +3,6 @@
   <application>frendz-1149</application>
   <version>1</version>
   <threadsafe>false</threadsafe>
+  <sessions-enabled>true</sessions-enabled>
+  <use-google-connector-j>true</use-google-connector-j>
 </appengine-web-app>
