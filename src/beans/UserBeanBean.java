@@ -115,6 +115,7 @@ public class UserBeanBean implements LocalUser, Serializable{
         sessionFactory = FrendzHibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
         UserEntity user = null;
+        String retToken = "";
 
         try{
             Query query = session.createQuery("from UserEntity as u where u.id = :id and u.authorisationToken = :authToken");
@@ -124,11 +125,12 @@ public class UserBeanBean implements LocalUser, Serializable{
             query.setInteger("id", 1);
             query.setString("authToken", authToken);
             List <UserEntity> list = query.list();
-            user = list.get(0);
-            String retToken = user.getAuthorisationToken();
-            System.out.println("token in DB " +retToken);
-            System.out.println("token send to method " +authToken);
-
+            if(list.size() > 0){
+                user = list.get(0);
+                retToken = user.getAuthorisationToken();
+                System.out.println("token in DB " +retToken);
+                System.out.println("token send to method " +authToken);
+            }
             if(authToken.equals(retToken)){
                 session.beginTransaction();
                 user.setConfirmed((byte)1);
@@ -148,6 +150,11 @@ public class UserBeanBean implements LocalUser, Serializable{
             session.close();
         }
         return confirmed;
+    }
+
+    public boolean addTestProfile(){
+
+        return false;
     }
 
     public void ejbCreate(int userID) throws CreateException {

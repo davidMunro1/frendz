@@ -17,8 +17,30 @@
       <column name="confirmed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="authorisation_token" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="user_id" table="user_profile" schema="" catalog="FrendzDB" columns="user_id"/>
       <index name="email_UNIQUE" unique="true" columns="email"/>
       <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="user_profile" schema="" catalog="FrendzDB" type="TABLE">
+      <column name="gender" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="sought_gender" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="programme" sqlType="VARCHAR" precision="65" scale="0" nullable="true" jdbcType="12"/>
+      <column name="bio" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_1" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image_2" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image_3" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_4" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_5" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <foreign-key name="user_id" columns="user_id" ref-table="user" ref-schema="" ref-catalog="FrendzDB" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="image_1_UNIQUE" unique="true" columns="image_1"/>
+      <index name="image_2_UNIQUE" unique="true" columns="image_2"/>
+      <index name="image_3_UNIQUE" unique="true" columns="image_3"/>
+      <index name="image_4_UNIQUE" unique="true" columns="image_4"/>
+      <index name="image_5_UNIQUE" unique="true" columns="image_5"/>
+      <index name="user_id_idx" unique="false" columns="user_id"/>
     </table>
   </data-source>
 </component>

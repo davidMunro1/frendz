@@ -29,7 +29,8 @@ public class FrendzServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("pageTwo.html");
+
     }
+
 
 }

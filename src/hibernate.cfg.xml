@@ -6,10 +6,9 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://173.194.252.254:3306/FrendzDB</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <property name="connection.username">david</property>
-      <property name="connection.password">david</property>
-      <mapping class="hibernate.UserEntity"/>
-      <!-- DB schema will be updated if needed -->
+    <mapping class="hibernate.UserEntity"/>
+    <mapping class="hibernate.UserProfileEntity"/>
+    <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>
