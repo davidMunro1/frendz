@@ -17,6 +17,11 @@
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/appengine-application.xml" />
       </element>
       <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Java EE 6-Java EE 6" />
+        <element id="library" level="project" name="mysql-connector-java-5.1.36" />
+        <element id="library" level="project" name="hibernate-3.5.3" />
+      </element>
     </root>
   </artifact>
 </component>

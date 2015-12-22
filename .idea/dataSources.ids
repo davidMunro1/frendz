@@ -1,52 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - SmartHouseTestDatabase@br-cdbr-azure-south-a.cloudapp.net" uuid="44269ab5-b9c7-4853-b7ce-85ccae82f98c">
-    <database-info product="MySQL" version="5.5.45-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+  <data-source name="MySQL - FrendzDB@173.194.252.254" uuid="966da56c-0f2e-4254-ae02-49fdce417982">
+    <database-info product="MySQL" version="5.6.26" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="smarthousetestdatabase"/>
-    <table name="device" schema="" catalog="smarthousetestdatabase" type="TABLE">
-      <column name="device_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="device_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="device_status" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1"/>
-      <column name="room_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="device_id"/>
-      <index name="device_id_UNIQUE" unique="true" columns="device_id"/>
-    </table>
-    <table name="environment" schema="" catalog="smarthousetestdatabase" type="TABLE">
-      <column name="environment_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="environment_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="environment_value" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="room_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="environment_id"/>
-      <index name="environment_id_UNIQUE" unique="true" columns="environment_id"/>
-    </table>
-    <table name="house" schema="" catalog="smarthousetestdatabase" type="TABLE">
-      <column name="id_house" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <primary-key name="PRIMARY" columns="id_house"/>
-      <index name="id_house_UNIQUE" unique="true" columns="id_house"/>
-    </table>
-    <table name="room" schema="" catalog="smarthousetestdatabase" type="TABLE">
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="FrendzDB"/>
+    <table name="user" schema="" catalog="FrendzDB" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="room_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="room_temperature" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="room_water_consumption" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="room_energy_consumption" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="house_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="idroom_UNIQUE" unique="true" columns="id"/>
-    </table>
-    <table name="user" schema="" catalog="smarthousetestdatabase" type="TABLE">
-      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="user_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="email" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="second_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="admin" sqlType="ENUM" precision="5" scale="0" nullable="true" jdbcType="1"/>
-      <column name="house_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="email" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="school" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="confirmed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="authorisation_token" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="user_id" table="user_profile" schema="" catalog="FrendzDB" columns="user_id"/>
+      <index name="email_UNIQUE" unique="true" columns="email"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="user_profile" schema="" catalog="FrendzDB" type="TABLE">
+      <column name="gender" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="sought_gender" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="programme" sqlType="VARCHAR" precision="65" scale="0" nullable="true" jdbcType="12"/>
+      <column name="bio" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_1" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image_2" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image_3" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_4" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="image_5" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="user_id"/>
-      <index name="user_id_UNIQUE" unique="true" columns="user_id"/>
+      <foreign-key name="user_id" columns="user_id" ref-table="user" ref-schema="" ref-catalog="FrendzDB" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="image_1_UNIQUE" unique="true" columns="image_1"/>
+      <index name="image_2_UNIQUE" unique="true" columns="image_2"/>
+      <index name="image_3_UNIQUE" unique="true" columns="image_3"/>
+      <index name="image_4_UNIQUE" unique="true" columns="image_4"/>
+      <index name="image_5_UNIQUE" unique="true" columns="image_5"/>
+      <index name="user_id_idx" unique="false" columns="user_id"/>
     </table>
   </data-source>
 </component>

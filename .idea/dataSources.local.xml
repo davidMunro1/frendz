@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - SmartHouseTestDatabase@br-cdbr-azure-south-a.cloudapp.net" uuid="44269ab5-b9c7-4853-b7ce-85ccae82f98c">
+    <data-source name="MySQL - FrendzDB@173.194.252.254" uuid="966da56c-0f2e-4254-ae02-49fdce417982">
       <secret-storage>master_key</secret-storage>
-      <user-name>b946337fb358ff</user-name>
-      <schema-pattern>smarthousetestdatabase.*</schema-pattern>
-      <default-schemas>smarthousetestdatabase.*</default-schemas>
+      <user-name>david</user-name>
+      <schema-pattern>FrendzDB.*</schema-pattern>
+      <default-schemas>FrendzDB.*</default-schemas>
     </data-source>
   </component>
 </project>

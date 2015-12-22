@@ -10,6 +10,6 @@
 
     <servlet-mapping>
         <servlet-name>FrendzServlet</servlet-name>
-        <url-pattern>FrendzServlet</url-pattern>
+        <url-pattern>/FrendzServlet</url-pattern>
     </servlet-mapping>
 </web-app>
