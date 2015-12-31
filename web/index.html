@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Frendz</title>
 </head>
-<body>
-    <h1>Login</h1>
-    <form action="/FrendzServlet" method="get">
-        <input name="userName" type="text">
-        <input name="password" type="text">
-        <input type="submit" value="Login" name="button">
-    </form>
+
+<script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function setError(){
+        document.getElementById('errorMessage').innerHTML = getParameterByName('error');
+    }
+</script>
+
+<body id="bgr" class="center" onload="setError()">
+
+<div class="container">
+    <div class="form center-vertical">
+        <img id="logo" src="images/logo.png">
+        <form action="/FrendzServlet" method="post">
+            <input name="email" placeholder="E-mail" type="text"><br>
+            <input name="password" placeholder="Password" type="password"><br>
+            <input id="button" type="submit" name="button" value="Login">
+        </form>
+        <a href="signup.html"><div>Don't have an account yet? Sign up here!</div></a>
+    </div>
+
+</div>
+
+<h2 id="errorMessage"></h2>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="hibernate-3.5.3">
+  <library name="activation-1.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/hibernate-3.5.3.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/activation-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

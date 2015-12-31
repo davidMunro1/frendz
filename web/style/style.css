@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+input {
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0.2);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #f5f5f5;
+    -webkit-box-shadow: 0px 0px 2px #f5f5f5;
+    -moz-box-shadow: 0px 0px 2px #f5f5f5;
+    box-shadow: 0px 0px 2px #f5f5f5;
+    font-size: 28px;
+    color: #fff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+input:focus {
+    -webkit-box-shadow: 0px 0px 3px #bf3b53;
+    -moz-box-shadow: 0px 0px 3px #bf3b53;
+    box-shadow: 0px 0px 5px #bf3b53;
+    border: 2px solid #fe6581;
+}
+.ui-helper-hidden-accessible {
+    position: absolute;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+.ui-menu {
+    position: absolute;
+    visibility: hidden;
+}
+button {
+    width: 420px;
+    height: 80px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #d1465f;
+    background-color: #bf3b53;
+    -webkit-box-shadow: 0px 0px 2px #bf3b53;
+    -moz-box-shadow: 0px 0px 2px #bf3b53;
+    box-shadow: 0px 0px 2px #bf3b53;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 28px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#button {
+    width: 420px;
+    height: 80px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #d1465f;
+    background-color: #bf3b53;
+    -webkit-box-shadow: 0px 0px 2px #bf3b53;
+    -moz-box-shadow: 0px 0px 2px #bf3b53;
+    box-shadow: 0px 0px 2px #bf3b53;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 28px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#bgr {
+    background-image: url('../images/bgr.jpg');
+}
+#logo {
+    width: 350px;
+    height: 100px;
+    padding-bottom: 35px;
+}
+.container {
+    width: 75%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 700px;
+    margin-left: 12.5%;
+    position: relative;
+    color: #ffffff;
+}
+.form {
+
+}
+.center {
+    text-align: center;
+}
+.center-vertical {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('../fonts/CaviarDreams-webfont.eot');
+    src: url('../fonts/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CaviarDreams-webfont.woff') format('woff'),
+    url('../fonts/CaviarDreams-webfont.ttf') format('truetype'),
+    url('../fonts/CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
