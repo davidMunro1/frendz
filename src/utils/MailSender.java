@@ -13,18 +13,18 @@ import java.util.Properties;
  */
 public class MailSender {
 
-    public void sendMessage() {
+    public void sendMessage(String receiver, String token) {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
 
-        String msgBody = "...";
+        String msgBody = "http://www.frendz-1149.appspot.com/confirmAccount.jsp?email=" + receiver + "&token=" + token;
 
         try {
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress("frendz-1149@appspot.gserviceaccount.com", "Example.com Admin"));
             msg.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress("orszag.juraj@gmail.com", "Mr. User"));
-            msg.setSubject("Your Example.com account has been activated");
+                    new InternetAddress(receiver, "Dear User"));
+            msg.setSubject("Your frendz.com needs to be verified");
             msg.setText(msgBody);
             Transport.send(msg);
 

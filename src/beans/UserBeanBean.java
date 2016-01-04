@@ -156,9 +156,9 @@ public class UserBeanBean implements LocalUser, Serializable{
         return confirmed;
     }
 
-    //TODO: Need to set parameters to what will be in profile.
+    //TODO: Add pictures as parameters
     @Override
-    public boolean createProfile(){
+    public boolean createProfile(int age, String bio, String gender, String soughtGender, String programme){
         Session session = sessionFactory.openSession();
         boolean success = false;
         Transaction tx = null;
@@ -167,12 +167,13 @@ public class UserBeanBean implements LocalUser, Serializable{
             tx = session.beginTransaction();
             UserProfileEntity profile = new UserProfileEntity();
             profile.setUserId(getUSER_ID());
-            profile.setAge(12);
-            profile.setBio("I am the mexican machine but I am a member of friends so I must be desperate");
-            profile.setGender("MALE");
+            profile.setAge(age);
+            profile.setBio(bio);
+            profile.setGender(gender);
+            profile.setSoughtGender(soughtGender);
             profile.setImage1("i1");
             profile.setImage2("i2");
-            profile.setProgramme("Business Administration");
+            profile.setProgramme(programme);
             session.save(profile);
             tx.commit();
             success = true;

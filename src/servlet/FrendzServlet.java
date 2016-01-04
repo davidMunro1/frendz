@@ -3,6 +3,8 @@ package servlet;
 import Helper.HashHelper;
 import beans.UserBeanBean;
 import com.google.appengine.api.blobstore.*;
+import com.google.appengine.repackaged.com.google.common.base.Flag;
+import utils.MailSender;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -83,14 +85,15 @@ public class FrendzServlet extends HttpServlet {
         byte confirmed =0;
         String toHash = request.getParameter("email").concat(request.getParameter("university"));
         String authToken = HashHelper.createHash(toHash);
+        String email = request.getParameter("email");
 
         boolean signUp = bean.handleSignUp(request.getParameter("firstName"), request.getParameter("lastName"),
-               request.getParameter("email"), request.getParameter("university"), confirmed, authToken);
+               email, request.getParameter("university"), confirmed, authToken);
 
         if(signUp==true){
             System.out.println("send mail with activation code, user signed up");
-            //MailSender mailSender = new MailSender();
-            //mailSender.sendMessage();
+            MailSender mailSender = new MailSender();
+            mailSender.sendMessage(email, authToken);
             try {
                 response.sendRedirect("index.html");
             } catch (IOException e) {
@@ -99,7 +102,6 @@ public class FrendzServlet extends HttpServlet {
         }
         else if(signUp==false){
             System.out.println("sign up failed");
-
         }
     }
 
@@ -116,7 +118,20 @@ public class FrendzServlet extends HttpServlet {
     }
 
     private void handleCreateProfile(HttpServletRequest request, HttpServletResponse response){
+        int age = Integer.parseInt(request.getParameter("age"));
+        String gender = request.getParameter("gender");
+        String soughtGender = request.getParameter("soughtGender");
+        String programme = request.getParameter("programme");
+        String bio = request.getParameter("bio");
+        boolean profileCreated = bean.createProfile(age, bio, gender, soughtGender, programme);
 
+        if(profileCreated) {
+            try {
+                response.sendRedirect("homepage.jsp");
+            } catch(IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
 }

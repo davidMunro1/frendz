@@ -11,17 +11,23 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>Create profile</title>
 </head>
-<body>
+<body id="bgr" class="center">
 
 <div class="container">
-  <div class="form center-vertical">
-    <img id="logo" src="images/logo.png">
-    <form action="/FrendzServlet" method="post">
-      <input name="email" placeholder="E-mail" type="text"><br>
-      <input name="password" placeholder="Password" type="password"><br>
-      <input id="button" type="submit" name="button" value="Create profile">
-    </form>
-  </div>
+    <div class="form center-vertical">
+        <img id="logo" src="images/logo.png">
+        <form action="/FrendzServlet" method="post">
+            <input name="age" placeholder="Age" type="text"><br>
+            <input name="gender" placeholder="Gender" type="text"><br>
+            <input name="programme" placeholder="Programme" type="text"><br>
+            <select name="soughtGender">
+                <option value="volvo">Men</option>
+                <option value="saab">Women</option>
+            </select><br>
+            <input name="bio" placeholder="Bio" type="text"><br>
+            <input id="button" type="submit" name="button" value="Create profile">
+        </form>
+    </div>
 </div>
 
 

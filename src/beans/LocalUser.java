@@ -18,7 +18,7 @@ public interface LocalUser{
     boolean handleSignUp(String firstName, String lastName, String email, String school, byte confirmed, String Authtoken);
     boolean handleLogin(String userName, String password);
     boolean handleConfirmation(String authToken, String email);
-    boolean createProfile();
+    boolean createProfile(int age, String bio, String gender, String soughtGender, String programme);
     UserProfileEntity getProfile();
 
 }
