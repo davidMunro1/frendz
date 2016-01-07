@@ -71,7 +71,7 @@ public class UserProfileEntity {
     }
 
     @Basic
-    @Column(name = "image_1", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "image_1", nullable = true, insertable = true, updatable = true, length = 45)
     public String getImage1() {
         return image1;
     }
@@ -81,7 +81,7 @@ public class UserProfileEntity {
     }
 
     @Basic
-    @Column(name = "image_2", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "image_2", nullable = true, insertable = true, updatable = true, length = 45)
     public String getImage2() {
         return image2;
     }

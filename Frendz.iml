@@ -31,11 +31,12 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$USER_HOME$/Desktop/appengine-java-sdk-1.9.30</sdk-home-path>
+        <sdk-home-path>$USER_HOME$/Documents/appengine-java-sdk-1.9.30</sdk-home-path>
       </configuration>
     </facet>
     <facet type="javaeeApplication" name="javaEEApplication">
@@ -57,13 +58,15 @@
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0 - EJB" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="AppEngine Dev 1.9.30" level="application_server_libraries" />
+    <orderEntry type="library" name="AppEngine API" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="javax.ejb" level="project" />
     <orderEntry type="library" name="org.glassfish:javax.ejb:3.0-b29" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.36" level="project" />
     <orderEntry type="library" name="com.google.appengine.tools:appengine-gcs-client:0.5" level="project" />
-    <orderEntry type="library" name="appengine-java-sdk-1.9" level="project" />
-    <orderEntry type="library" name="javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" name="javax.mail:javax.mail-api:1.5.5" level="project" />
+    <orderEntry type="library" name="javax.mail-api-1.5.1" level="project" />
+    <orderEntry type="library" name="activation-1.1" level="project" />
+    <orderEntry type="library" name="com.twelvemonkeys.imageio:imageio-core:3.2.1" level="project" />
+    <orderEntry type="library" name="appengine-java-sdk-1.91" level="project" />
   </component>
 </module>

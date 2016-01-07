@@ -7,6 +7,15 @@
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="FrendzDB"/>
+    <table name="relationships" schema="" catalog="FrendzDB" type="TABLE">
+      <column name="relationship_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_1" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="user_2" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="visited" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="like_user" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="block_user" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="relationship_id"/>
+    </table>
     <table name="user" schema="" catalog="FrendzDB" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="first_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
