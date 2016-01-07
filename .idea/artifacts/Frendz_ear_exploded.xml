@@ -8,7 +8,6 @@
       </element>
       <element id="directory" name="ejb.jar">
         <element id="artifact" artifact-name="Frendz:ejb exploded" />
-        <element id="library" level="project" name="AppEngine API" />
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         </element>
