@@ -3,6 +3,14 @@ package servlet;
 import Helper.HashHelper;
 import beans.UserBeanBean;
 import com.google.appengine.api.blobstore.*;
+import com.google.appengine.api.images.Image;
+import com.google.appengine.api.images.ImagesService;
+import com.google.appengine.api.images.ImagesServiceFactory;
+import com.google.appengine.api.images.ServingUrlOptions;
+import hibernate.NextUser;
+import hibernate.UserEntity;
+import hibernate.UserProfileEntity;
+import utils.MailSender;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +18,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by davidmunro on 08/12/2015.
@@ -30,14 +40,16 @@ public class FrendzServlet extends HttpServlet {
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
-            handleLogin(request,response);
+            bean.setUSER_ID(22);
+            //handleLogin(request,response);
+
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
             handleSignUp(request, response);
-        } else if(request.getParameter("button").equalsIgnoreCase("Verify")){
-            System.out.println("Verify account");
-            //handleConfirmation(request, response);
-        }else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
+        } else if(request.getParameter("button").equalsIgnoreCase("Confirm")){
+            System.out.println("Confirm account");
+            handleConfirmation(request, response);
+        } else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
             System.out.println("create profile");
             handleCreateProfile(request, response);
         }
@@ -83,40 +95,98 @@ public class FrendzServlet extends HttpServlet {
         byte confirmed =0;
         String toHash = request.getParameter("email").concat(request.getParameter("university"));
         String authToken = HashHelper.createHash(toHash);
+        String email = request.getParameter("email");
 
         boolean signUp = bean.handleSignUp(request.getParameter("firstName"), request.getParameter("lastName"),
-               request.getParameter("email"), request.getParameter("university"), confirmed, authToken);
+               email, request.getParameter("university"), confirmed, authToken);
 
-        if(signUp==true){
+        if(signUp){
             System.out.println("send mail with activation code, user signed up");
-            //MailSender mailSender = new MailSender();
-            //mailSender.sendMessage();
+            MailSender mailSender = new MailSender();
+            mailSender.sendMessage(email, authToken);
             try {
-                response.sendRedirect("index.html");
+                response.sendRedirect("mailSent.jsp?email="+request.getParameter("email"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        else if(signUp==false){
+        else if(!signUp){
             System.out.println("sign up failed");
 
         }
     }
 
     private void handleConfirmation(HttpServletRequest request, HttpServletResponse response){
-        String authToken = request.getParameter("token");
-        String email = request.getParameter("email");
-        boolean confirm = bean.handleConfirmation(authToken, email);
-        if(confirm==true){
-            System.out.println("confirmed, go to create profile page");
-        }
-        else{
-            System.out.println("confirmation failed, where to go here?");
+        try{
+            //String authToken = request.getParameter("token");
+            String authToken = "aea4312f57072f07df24a846546ed584";
+            //String email = request.getParameter("email");
+            String email = "dadae@se";
+            String password = request.getParameter("password");
+            boolean confirm = bean.handleConfirmation(authToken, email, password);
+            if(confirm==true){
+                response.sendRedirect("profileCreation.jsp");
+            }
+            else{
+                System.out.println("confirmation failed");
+            }
+        }catch (Exception ee){
+            System.out.println(ee.getMessage());
         }
     }
 
     private void handleCreateProfile(HttpServletRequest request, HttpServletResponse response){
+        //bean.setUSER_ID(17);
+        boolean uploadPic = false;
+        boolean created;
 
+        created = bean.createProfile(Integer.valueOf(request.getParameter("age")),
+                request.getParameter("gender"),
+                request.getParameter("soughtGender"),
+                request.getParameter("programme"),
+                request.getParameter("bio"));
+
+        if(created==true){
+            uploadPic = uploadImage(request,response);
+        }
+        else{
+            System.out.println("failed in creating profile");
+        }
+
+
+        if(created==true && uploadPic == true){
+            ImagesService imagesService = ImagesServiceFactory.getImagesService();
+            BlobKey blobKey = new BlobKey(bean.getImage());
+            ServingUrlOptions servingUrlOptions = ServingUrlOptions.Builder.withBlobKey(blobKey);
+
+            System.out.println("profile created");
+        }
+        else if(created==false || uploadPic==false){
+            System.out.println("failed in creation of profile");
+        }
+    }
+
+    private boolean uploadImage(HttpServletRequest request, HttpServletResponse response){
+
+        boolean pictureUploadSuccess = false;
+        try{
+            Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
+            List<BlobKey> blobKeys = blobs.get("image1");
+
+            bean.addImage(blobKeys.get(0).getKeyString(), 1);
+
+            List<BlobKey> blobK = blobs.get("image2");
+            bean.addImage(blobK.get(0).getKeyString(), 2);
+
+            pictureUploadSuccess = true;
+
+
+        }catch (Exception ee){
+            System.out.println("Error");
+            ee.printStackTrace();
+        }
+
+        return pictureUploadSuccess;
     }
 
 }

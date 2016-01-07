@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <title>Confirm account</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <title>Confirm account</title>
 </head>
-<body>
+<body id="bgr" class="center">
 
 <div class="container">
   <div class="form center-vertical">
