@@ -16,6 +16,7 @@ public class RelationshipsEntity {
     private Byte block;
 
     @Id
+    @GeneratedValue
     @Column(name = "relationship_id", nullable = false, insertable = true, updatable = true)
     public int getRelationshipId() {
         return relationshipId;
@@ -46,7 +47,7 @@ public class RelationshipsEntity {
     }
 
     @Basic
-    @Column(name = "visit", nullable = true, insertable = true, updatable = true)
+    @Column(name = "visited", nullable = true, insertable = true, updatable = true)
     public Byte getVisit() {
         return visit;
     }
@@ -56,7 +57,7 @@ public class RelationshipsEntity {
     }
 
     @Basic
-    @Column(name = "like", nullable = true, insertable = true, updatable = true)
+    @Column(name = "like_user", nullable = true, insertable = true, updatable = true)
     public Byte getLike() {
         return like;
     }
@@ -66,7 +67,7 @@ public class RelationshipsEntity {
     }
 
     @Basic
-    @Column(name = "block", nullable = true, insertable = true, updatable = true)
+    @Column(name = "block_user", nullable = true, insertable = true, updatable = true)
     public Byte getBlock() {
         return block;
     }

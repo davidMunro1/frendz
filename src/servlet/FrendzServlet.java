@@ -41,6 +41,7 @@ public class FrendzServlet extends HttpServlet {
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
             bean.setUSER_ID(22);
+            bean.handleLike(26, (byte)1);
             //handleLogin(request,response);
 
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){

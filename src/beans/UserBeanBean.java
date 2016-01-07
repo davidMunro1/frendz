@@ -7,10 +7,7 @@ import com.google.appengine.api.images.Image;
 import com.google.appengine.api.images.ImagesService;
 import com.google.appengine.api.images.ImagesServiceFactory;
 import com.google.appengine.api.images.Transform;
-import hibernate.FrendzHibernateUtil;
-import hibernate.NextUser;
-import hibernate.UserEntity;
-import hibernate.UserProfileEntity;
+import hibernate.*;
 import org.hibernate.*;
 import org.hibernate.criterion.*;
 
@@ -37,6 +34,9 @@ public class UserBeanBean implements LocalUser, Serializable{
 
     private int browseIndex = 0;
     private int matchedResults;
+
+    private Byte TRUE = 1;
+    private Byte FALSE = 0;
 
     public UserBeanBean() {}
 
@@ -344,6 +344,8 @@ public class UserBeanBean implements LocalUser, Serializable{
             nextUser.setFirstName(userr.getFirstName());
             nextUser.setPictureString(matchedUsers.get(i).getImage1());
             nextUser.setProgramme(matchedUsers.get(i).getProgramme());
+            nextUser.setAge(matchedUsers.get(i).getAge());
+            nextUser.setUserID(matchedUsers.get(i).getUserId());
             nextUsers.add(nextUser);
         }
 
@@ -354,20 +356,41 @@ public class UserBeanBean implements LocalUser, Serializable{
      * Handle like button clicked
      * @param likedUserID the ID of the profile that the user likes
      */
-    public void handleLike(int likedUserID){
-        //we have the id of the logged in user
-        //getUSER_ID();
+    public void handleLike(int likedUserID, byte like){
         if(sessionFactory==null){
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try{
+            tx = session.beginTransaction();
+            RelationshipsEntity relationshipsEntity = new RelationshipsEntity();
+            relationshipsEntity.setUser1(getUSER_ID());
+            relationshipsEntity.setUser2(likedUserID);
+            relationshipsEntity.setVisit(TRUE);
+            relationshipsEntity.setLike(like);
+            relationshipsEntity.setBlock(FALSE);
+            session.save(relationshipsEntity);
+            tx.commit();
+
+            Criteria criteria = session.createCriteria(RelationshipsEntity.class);
 
 
+        }catch(HibernateException ee){
+            try{
+                tx.rollback();
+            }catch(RuntimeException rbe){
+                System.out.println(rbe.getMessage());
+            }
+        }finally {
+            session.close();
+        }
     }
 
     /**
      * Handle dislike button clicked
-     * @param dislikedUserID the id f the profile that the user dislikes
+     * @param dislikedUserID the id of the profile that the user dislikes
      */
     public void handleDislike(int dislikedUserID){
 

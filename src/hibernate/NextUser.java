@@ -8,6 +8,8 @@ public class NextUser {
     private String pictureString;
     private String firstName;
     private String programme;
+    private Integer userID;
+    private Integer age;
 
 
     public String getPictureString() {
@@ -32,5 +34,21 @@ public class NextUser {
 
     public void setProgramme(String programme) {
         this.programme = programme;
+    }
+
+    public Integer getUserID() {
+        return userID;
+    }
+
+    public void setUserID(Integer userID) {
+        this.userID = userID;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
