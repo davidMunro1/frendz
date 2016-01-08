@@ -30,7 +30,7 @@ public class UserBeanBean implements LocalUser, Serializable{
     private SessionContext sessionContext;
     private static final long serialVersionUID = 1L;
 
-    private SessionFactory sessionFactory = FrendzHibernateUtil.getSessionFactory();
+    public SessionFactory sessionFactory = FrendzHibernateUtil.getSessionFactory();
 
     private int browseIndex = 0;
     private int matchedResults;
@@ -86,10 +86,12 @@ public class UserBeanBean implements LocalUser, Serializable{
 
     @Override
     public boolean handleLogin(String email, String password) {
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
+        Session session = sessionFactory.openSession();
         boolean authorise = false;
         String hashedPass = HashHelper.createHash(password);
-
-        Session session = sessionFactory.openSession();
 
         try{
             Query q2 = session.createQuery("from UserEntity as u where u.email = :email and u.password = :password");
@@ -237,6 +239,7 @@ public class UserBeanBean implements LocalUser, Serializable{
      * @param imageNumber The image number to set it to.
      * @return
      */
+    @Override
     public String addImage(String blobKeyString, int imageNumber){
 
         Session session = sessionFactory.openSession();
@@ -282,6 +285,7 @@ public class UserBeanBean implements LocalUser, Serializable{
      * that is currently logged in.
      * @return
      */
+    @Override
     public String getImage(){
         return getProfile().getImage1();
     }
@@ -292,6 +296,7 @@ public class UserBeanBean implements LocalUser, Serializable{
      * @param userID
      * @return
      */
+    @Override
     public String getImage(int userID){
         Session session = sessionFactory.openSession();
         UserProfileEntity user = (UserProfileEntity)session.get(UserEntity.class, userID);
@@ -303,6 +308,7 @@ public class UserBeanBean implements LocalUser, Serializable{
      * match the required criteria.
      * @return a list of all users that match criteria.
      */
+    @Override
     public List<NextUser> browseAllUsers(){
         if(sessionFactory==null){
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
@@ -346,9 +352,9 @@ public class UserBeanBean implements LocalUser, Serializable{
             nextUser.setProgramme(matchedUsers.get(i).getProgramme());
             nextUser.setAge(matchedUsers.get(i).getAge());
             nextUser.setUserID(matchedUsers.get(i).getUserId());
+            nextUser.setBio(matchedUsers.get(i).getBio());
             nextUsers.add(nextUser);
         }
-
         return nextUsers;
     }
 
@@ -356,7 +362,8 @@ public class UserBeanBean implements LocalUser, Serializable{
      * Handle like button clicked
      * @param likedUserID the ID of the profile that the user likes
      */
-    public void handleLike(int likedUserID, byte like){
+    @Override
+    public void handleLike(int likedUserID){
         if(sessionFactory==null){
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
@@ -369,13 +376,17 @@ public class UserBeanBean implements LocalUser, Serializable{
             relationshipsEntity.setUser1(getUSER_ID());
             relationshipsEntity.setUser2(likedUserID);
             relationshipsEntity.setVisit(TRUE);
-            relationshipsEntity.setLike(like);
+            relationshipsEntity.setLike(TRUE);
             relationshipsEntity.setBlock(FALSE);
             session.save(relationshipsEntity);
             tx.commit();
 
             Criteria criteria = session.createCriteria(RelationshipsEntity.class);
-
+            criteria.add(Restrictions.eq("user1", likedUserID));
+            criteria.add(Restrictions.eq("like", TRUE));
+            if(criteria.list().size()>0){
+                //TODO: There was a match, initialise messaging.
+            }
 
         }catch(HibernateException ee){
             try{
@@ -392,8 +403,34 @@ public class UserBeanBean implements LocalUser, Serializable{
      * Handle dislike button clicked
      * @param dislikedUserID the id of the profile that the user dislikes
      */
+    @Override
     public void handleDislike(int dislikedUserID){
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
 
+        try{
+            tx = session.beginTransaction();
+            RelationshipsEntity relationshipsEntity = new RelationshipsEntity();
+            relationshipsEntity.setUser1(getUSER_ID());
+            relationshipsEntity.setUser2(dislikedUserID);
+            relationshipsEntity.setVisit(TRUE);
+            relationshipsEntity.setLike(FALSE);
+            relationshipsEntity.setBlock(FALSE);
+            session.save(relationshipsEntity);
+            tx.commit();
+
+        }catch(HibernateException ee){
+            try{
+                tx.rollback();
+            }catch(RuntimeException rbe){
+                System.out.println(rbe.getMessage());
+            }
+        }finally {
+            session.close();
+        }
     }
 
     public Image getImageObject(BlobKey blobKey){

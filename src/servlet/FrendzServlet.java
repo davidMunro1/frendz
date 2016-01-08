@@ -32,6 +32,8 @@ public class FrendzServlet extends HttpServlet {
     private int USER_ID = 10;
     private UserBeanBean bean = new UserBeanBean();
 
+    private Byte TRUE = 1;
+    private Byte FALSE = 0;
     private String ERROR_SIGN_UP = "Sign up failed";
 
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
@@ -40,8 +42,7 @@ public class FrendzServlet extends HttpServlet {
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
-            bean.setUSER_ID(22);
-            bean.handleLike(26, (byte)1);
+            response.sendRedirect("homepage.jsp");
             //handleLogin(request,response);
 
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
@@ -77,7 +78,7 @@ public class FrendzServlet extends HttpServlet {
     private void handleLogin(HttpServletRequest request, HttpServletResponse response){
         boolean correctUser = bean.handleLogin(request.getParameter("email"), request.getParameter("password"));
         System.out.println("user exists : " +correctUser);
-        if(correctUser==true){
+        if(correctUser){
             //go to homepage
             try {
                 response.sendRedirect("homepage.jsp");
@@ -85,7 +86,7 @@ public class FrendzServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        else if(correctUser==false){
+        else if(!correctUser){
             System.out.println("user does not exist or account not confirmed!");
             //TODO: Need to send error message back to user, user doesnt exist, not confirmed or wrong combination.
 
@@ -125,7 +126,7 @@ public class FrendzServlet extends HttpServlet {
             String email = "dadae@se";
             String password = request.getParameter("password");
             boolean confirm = bean.handleConfirmation(authToken, email, password);
-            if(confirm==true){
+            if(confirm){
                 response.sendRedirect("profileCreation.jsp");
             }
             else{
@@ -147,7 +148,7 @@ public class FrendzServlet extends HttpServlet {
                 request.getParameter("programme"),
                 request.getParameter("bio"));
 
-        if(created==true){
+        if(created){
             uploadPic = uploadImage(request,response);
         }
         else{
@@ -155,7 +156,7 @@ public class FrendzServlet extends HttpServlet {
         }
 
 
-        if(created==true && uploadPic == true){
+        if(created && uploadPic){
             ImagesService imagesService = ImagesServiceFactory.getImagesService();
             BlobKey blobKey = new BlobKey(bean.getImage());
             ServingUrlOptions servingUrlOptions = ServingUrlOptions.Builder.withBlobKey(blobKey);

@@ -66,5 +66,14 @@
     <orderEntry type="library" name="javax.mail-api-1.5.1" level="project" />
     <orderEntry type="library" name="activation-1.1" level="project" />
     <orderEntry type="library" name="imageio-core-3.2.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

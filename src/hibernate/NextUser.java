@@ -10,6 +10,7 @@ public class NextUser {
     private String programme;
     private Integer userID;
     private Integer age;
+    private String bio;
 
 
     public String getPictureString() {
@@ -50,5 +51,13 @@ public class NextUser {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }
