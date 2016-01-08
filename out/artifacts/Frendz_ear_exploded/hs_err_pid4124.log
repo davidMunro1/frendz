@@ -1,0 +1,41 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:211), pid=4124, tid=4628
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_40-b43) (build 1.7.0_40-b43)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.0-b56 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000009ceb800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=4628, stack(0x000000000a2b0000,0x000000000a3b0000)]
+
+Stack: [0x000000000a2b0000,0x000000000a3b0000]
+
+Current CompileTask:
+C2:   9154  238             java.net.URL::getProtocol (5 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000c21f800 JavaThread "1412564573@qtp-1212885122-3" [_thread_blocked, id=10792, stack(0x000000000cd90000,0x000000000ce90000)]
+  0x000000000c220000 JavaThread "Timer-1" daemon [_thread_blocked, id=3708, stack(0x000000000b190000,0x000000000b290000)]
+  0x000000000ba6a800 JavaThread "Timer-0" daemon [_thread_blocked, id=9168, stack(0x000000000cbe0000,0x000000000cce0000)]
+  0x0000000009fff000 

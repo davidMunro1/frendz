@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.glassfish:javax.ejb:3.0-b29" type="repository">
+    <properties maven-id="org.glassfish:javax.ejb:3.0-b29" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javax.ejb-3.0-b29.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.transaction-3.0-b29.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
