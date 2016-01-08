@@ -13,8 +13,6 @@ import java.util.Properties;
  */
 public class MailSender {
 
-    //TODO: Should this return boolean to check that email has been sent properly?
-
     public void sendMessage(String receiver, String token) {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);

@@ -1,7 +1,7 @@
 package beans;
 
 import Helper.HashHelper;
-import com.google.api.server.spi.auth.common.User;
+//import com.google.api.server.spi.auth.common.User;
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.images.Image;
 import com.google.appengine.api.images.ImagesService;
