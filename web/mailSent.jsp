@@ -13,11 +13,16 @@
 </head>
 <body id="bgr" class="center">
 
-<div class="container">
-  <img id="logo" src="images/logo.png">
-  <h1 class="center">An email has been sent to <%=request.getParameter("email")%>, please go to your email and click on the confirmation link!</h1>
-  <h2>- The Frendz team -</h2>
-</div>
+    <div class="container">
+
+        <div class="center-vertical">
+            <img id="logo" src="images/logo.png">
+            <h1 class="center">An email has been sent to <%=request.getParameter("email")%>, please go to your email and click on the confirmation link!</h1>
+            <p>&nbsp;</p>
+            <h2>- The frendz team -</h2>
+        </div>
+
+    </div>
 
 </body>
 </html>

@@ -38,6 +38,8 @@ public class UserBeanBean implements LocalUser, Serializable{
     private Byte TRUE = 1;
     private Byte FALSE = 0;
 
+    int index = -1;
+
     public UserBeanBean() {}
 
     @Override
@@ -304,6 +306,8 @@ public class UserBeanBean implements LocalUser, Serializable{
      * @return a list of all users that match criteria.
      */
     public List<NextUser> browseAllUsers(){
+        //testing id only
+        setUSER_ID(22);
         if(sessionFactory==null){
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
@@ -350,6 +354,53 @@ public class UserBeanBean implements LocalUser, Serializable{
         }
 
         return nextUsers;
+    }
+
+    public NextUser showNextUser(){
+        index ++;
+        //testing id only
+        setUSER_ID(22);
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
+        Session session = sessionFactory.openSession();
+        UserEntity user = (UserEntity)session.get(UserEntity.class, getUSER_ID());
+        UserProfileEntity usersProfile = (UserProfileEntity)session.get(UserProfileEntity.class, getUSER_ID());
+        List<Integer> ids = new ArrayList<>();
+
+        System.out.println("The user is looking for..." +usersProfile.getSoughtGender());
+
+        Criteria criteria = session.createCriteria(UserEntity.class);
+        //TODO: add below line when testing completed.
+        //criteria.add(Restrictions.eq("confirmed", (byte)1));
+        criteria.add(Restrictions.eq("school", user.getSchool()));
+        criteria.add(Restrictions.ne("id", user.getId()));
+        List<UserEntity> list = criteria.list();
+
+        for(int i = 0; i < list.size(); i++){
+            ids.add(list.get(i).getId());
+        }
+
+        Criteria c = session.createCriteria(UserProfileEntity.class);
+        c.add(Restrictions.in("id", ids));
+        c.add(Restrictions.eq("gender", usersProfile.getSoughtGender()));
+        c.add(Restrictions.eq("soughtGender", usersProfile.getGender()));
+        setMatchedResults(c.list().size());
+
+        c.setMaxResults(1);
+        c.setFirstResult(getBrowseIndex());
+        List<UserProfileEntity> matchedUsers = c.list();
+
+        setBrowseIndex(browseIndex+matchedUsers.size());
+        NextUser nextUser = new NextUser();
+        UserEntity userr = (UserEntity)session.get(UserEntity.class, matchedUsers.get(0).getUserId());
+        nextUser.setFirstName(userr.getFirstName());
+        nextUser.setPictureString(matchedUsers.get(0).getImage1());
+        nextUser.setProgramme(matchedUsers.get(0).getProgramme());
+        nextUser.setAge(matchedUsers.get(0).getAge());
+        nextUser.setUserID(matchedUsers.get(0).getUserId());
+
+        return nextUser;
     }
 
     /**

@@ -18,7 +18,7 @@
         <img id="logo" src="images/logo.png">
         <%
             UserBeanBean bean = new UserBeanBean();
-            boolean verified = bean.handleConfirmation(request.getParameter("token"), request.getParameter("email"));
+            boolean verified = bean.handleConfirmation(request.getParameter("token"), request.getParameter("email"), "password");
             if(verified)
                 out.println("<div class='info_message'>Congratulations! Your account has been verified!</div>");
             else {

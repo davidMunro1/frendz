@@ -40,9 +40,9 @@ public class FrendzServlet extends HttpServlet {
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
-            bean.setUSER_ID(22);
-            bean.handleLike(26, (byte)1);
-            //handleLogin(request,response);
+//            bean.setUSER_ID(22);
+//            bean.handleLike(26, (byte)1);
+            handleLogin(request,response);
 
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
@@ -53,24 +53,23 @@ public class FrendzServlet extends HttpServlet {
         } else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
             System.out.println("create profile");
             handleCreateProfile(request, response);
+        } else if(request.getParameter("button").equalsIgnoreCase("like")) {
+            bean.handleLike(Integer.parseInt(request.getParameter("userId")), (byte)1);
+            System.out.println("like click handled");
         }
+        System.out.println("post here");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         bean.setUSER_ID(18);
 
-        String type = request.getParameter("button");
-        System.out.println("Value== "+type);
-        byte confirmed =0;
-
-        if(type.equals("Login")){
-
-        }
-        else if(type.equals("User")){
-            //bla bla
-            response.sendRedirect("file.jsp");
+        if(request.getParameter("action").equalsIgnoreCase("like")) {
+            bean.handleLike(Integer.parseInt(request.getParameter("userId")), (byte)1);
+            System.out.println("like handled");
+        } else if(request.getParameter("action").equalsIgnoreCase("dislike")) {
+            bean.handleDislike(Integer.parseInt(request.getParameter("userId")));
+            System.out.println("dislike handled");
         }
     }
 
