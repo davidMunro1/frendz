@@ -6,35 +6,58 @@
     <title>frendz - Sign up</title>
 
     <script src="js/jquery-1.10.2.js"></script>
-    <!--<script src="js/jquery-ui.js"></script>-->
     <script src="js/richwidgets-demo.min.js"></script>
     <script>
         $(function() {
-            var availableTags = [
-                "ActionScript",
-                "AppleScript",
-                "Asp",
-                "BASIC",
-                "C",
-                "C++",
-                "Clojure",
-                "COBOL",
-                "ColdFusion",
-                "Erlang",
-                "Fortran",
-                "Groovy",
-                "Haskell",
-                "Java",
-                "JavaScript",
-                "Lisp",
-                "Perl",
-                "PHP",
-                "Python",
-                "Ruby",
-                "Scala",
-                "Scheme"
+            var schools = [
+                "Chalmers tekniska högskola",
+                "Göteborgs universitet",
+                "Handelshögskolan i Stockholm",
+                "Karlstads universitet",
+                "Karolinska Institutet",
+                "Kungliga Tekniska högskolan",
+                "Linköpings universitet",
+                "Linnéuniversitetet",
+                "Luleå tekniska universitet",
+                "Lunds universitet",
+                "Mittuniversitetet",
+                "Stockholms universitet",
+                "Sveriges lantbruksuniversitet",
+                "Umeå universitet",
+                "Uppsala universitet",
+                "Örebro universitet",
+                "Beckmans Designhögskola",
+                "Blekinge tekniska högskola",
+                "Dans och Cirkushögskolan",
+                "Ericastiftelsen",
+                "Ersta Sköndal högskola",
+                "Försvarshögskolan",
+                "Gymnastik- och idrottshögskolan",
+                "Högskolan Dalarna",
+                "Högskolan i Borås",
+                "Högskolan i Gävle",
+                "Högskolan i Halmstad",
+                "Högskolan i Skövde",
+                "Högskolan Kristianstad",
+                "Högskolan Väst",
+                "Johannelunds teologiska högskola",
+                "Jönköping University",
+                "Konstfack",
+                "Kungl. Konsthögskolan",
+                "Kungliga Musikhögskolan i Stockholm",
+                "Lunds tekniska högskola",
+                "Malmö högskola",
+                "Mälardalens högskola",
+                "Operahögskolan",
+                "Röda Korsets högskola",
+                "Sophiahemmet Högskola",
+                "Stockholms dramatiska högskola",
+                "Stockholms musikpedagogiska institut",
+                "Södertörns högskola",
+                "Teologiska högskolan Stockholm",
+                "Örebro missionsskola"
             ];
-            $( "#tags" ).autocomplete({ source: availableTags, autoFocus: true, autoFill: true });
+            $( "#schools" ).autocomplete({ source: schools, autoFocus: true, autoFill: true });
         });
     </script>
 
@@ -49,7 +72,7 @@
             <input name="lastName" placeholder="Last name" type="text"><br>
             <input name="email" placeholder="E-mail" type="text"><br>
             <!--Universities-->
-            <input id="tags" class="form-control" name="university" placeholder="University" type="text"><br>
+            <input id="schools" class="form-control" name="university" placeholder="University" type="text"><br>
             <input id="button" type="submit" name="button" value="Sign up">
         </form>
     </div>

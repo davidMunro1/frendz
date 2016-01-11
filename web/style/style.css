@@ -138,10 +138,10 @@ button {
 }
 #info_container {
     width: 400px;
-    height: 400px;
+    height: 300px;
     position: relative;
     left: calc(50% - 500px);
-    margin-top: -340px;
+    margin-top: -240px;
     background-color: #5a6b8c;
     -webkit-box-shadow: 0px 2px 8px #444;
     -moz-box-shadow: 0px 2px 8px #444;
@@ -169,7 +169,7 @@ nav {
     overflow: hidden;
     float: right;
     position: relative;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-right: 150px;
 }
 #like {
@@ -178,33 +178,33 @@ nav {
     background-image: url("../images/tick.png");
     position: relative;
     left: 650px;
-    top: 380px;
+    top: 435px;
 }
 #like:hover {
     width: 130px;
     height: 130px;
     background-size: 130px 130px;
     left: 645px;
-    top: 375px;
+    top: 430px;
 }
 #dislike {
     width: 120px;
     height: 120px;
-    background-image: url("../images/crosss.png");
+    background-image: url("../images/cross.png");
     position: absolute;
     left: 430px;
-    top: 380px;
+    top: 435px;
 }
 #dislike:hover {
     width: 130px;
     height: 130px;
     background-size: 130px 130px;
     left: 425px;
-    top: 375px;
+    top: 430px;
 }
 #name {
     width: 80%;
-    padding-top: 36px;
+    padding-top: 48px;
     padding-bottom: 12px;
     margin-left: 10%;
     color: #ffffff;
@@ -218,9 +218,33 @@ nav {
     padding-bottom: 12px;
     margin-left: 10%;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 24px;
     border-bottom: 1px dotted #ffffff;
     font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#age {
+    width: 80%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    margin-left: 10%;
+    color: #ffffff;
+    font-size: 24px;
+    border-bottom: 1px dotted #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#bio {
+    width: 450px;
+    height: 64px;
+    position: absolute;
+    top: 355px;
+    left: 370px;
+    text-align: center;
+    color: #616161;
+    font-size: 18px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+h1 {
+    font-size: 24px;
 }
 
 @font-face {
