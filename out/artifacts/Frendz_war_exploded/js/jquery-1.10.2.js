@@ -1,17 +1,16 @@
-
-    /*!
-     * jQuery JavaScript Library v1.10.2
-     * http://jquery.com/
-     *
-     * Includes Sizzle.js
-     * http://sizzlejs.com/
-     *
-     * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
-     * Released under the MIT license
-     * http://jquery.org/license
-     *
-     * Date: 2013-07-03T13:48Z
-     */
+/*!
+ * jQuery JavaScript Library v1.10.2
+ * http://jquery.com/
+ *
+ * Includes Sizzle.js
+ * http://sizzlejs.com/
+ *
+ * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
+ * Released under the MIT license
+ * http://jquery.org/license
+ *
+ * Date: 2013-07-03T13:48Z
+ */
 (function( window, undefined ) {
 
 // Can't do this because several apps including ASP.NET trace
@@ -5831,7 +5830,7 @@
 
         addBack: function( selector ) {
             return this.add( selector == null ?
-                    this.prevObject : this.prevObject.filter(selector)
+                this.prevObject : this.prevObject.filter(selector)
             );
         }
     });
@@ -7320,13 +7319,13 @@
             set: function( elem, value, extra ) {
                 var styles = extra && getStyles( elem );
                 return setPositiveNumber( elem, value, extra ?
-                        augmentWidthOrHeight(
-                            elem,
-                            name,
-                            extra,
-                            jQuery.support.boxSizing && jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-                            styles
-                        ) : 0
+                    augmentWidthOrHeight(
+                        elem,
+                        name,
+                        extra,
+                        jQuery.support.boxSizing && jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+                        styles
+                    ) : 0
                 );
             }
         };
@@ -7465,10 +7464,10 @@
         },
         serializeArray: function() {
             return this.map(function(){
-                // Can add propHook for "elements" to filter or add form elements
-                var elements = jQuery.prop( this, "elements" );
-                return elements ? jQuery.makeArray( elements ) : this;
-            })
+                    // Can add propHook for "elements" to filter or add form elements
+                    var elements = jQuery.prop( this, "elements" );
+                    return elements ? jQuery.makeArray( elements ) : this;
+                })
                 .filter(function(){
                     var type = this.type;
                     // Use .is(":disabled") so that fieldset[disabled] works
@@ -9788,4 +9787,3 @@
     }
 
 })( window );
-

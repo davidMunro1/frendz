@@ -1,4 +1,7 @@
-<%@ page import="beans.UserBeanBean" %><%--
+<%@ page import="beans.UserBeanBean" %>
+<%@ page import="servlet.FrendzServlet" %>
+<%@ page import="javax.ejb.SessionContext" %>
+<%--
   Created by IntelliJ IDEA.
   User: davidmunro
   Date: 30/12/2015
@@ -18,6 +21,7 @@
         <img id="logo" src="images/logo.png">
         <%
             UserBeanBean bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
             boolean verified = bean.handleConfirmation(request.getParameter("token"), request.getParameter("email"));
             if(verified)
                 out.println("<div class='info_message'>Congratulations! Your account has been verified!</div>");
@@ -29,6 +33,9 @@
         <form action="/FrendzServlet" method="post">
             <input name="password" placeholder="Password" type="password"><br>
             <input name="confirmPassword" placeholder="Confirm password" type="password"><br>
+
+            <input name="email" value="<%=request.getParameter("email")%>" type="hidden">
+
             <input id="button" type="submit" name="button" value="Confirm">
         </form>
     </div>

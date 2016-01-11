@@ -7,7 +7,6 @@ var global_password = '';
 
 sinchClient = new SinchClient({
     applicationKey: 'da09f365-18e7-47d0-ad41-e3419bca7ac0',
-    applicationSecret: '70qsOKjHXUiGykDsGZIDiw==',
     capabilities: {messaging: true},
 });
 
@@ -20,10 +19,10 @@ $('#login').on('click',function(event){
     var username = 'David';
     var password = 'password';
 
-    $.post('http://localhost:8082',
+    $.post('http://localhost:8082/auth.php',
         {username: username, password: password},
         function(authTicket) {
-            console.log("comes here")
+            console.log("comes here");
             sinchClient.start(authTicket)
                 .then(function() {
                     // Handle successful start, like showing the UI
@@ -40,6 +39,7 @@ $('#login').on('click',function(event){
 
     var messageClient = sinchClient.getMessageClient();
 
+    /*
     var username = 'David';
     var password = 'password';
     sinchClient.start({username: username, password: password}, function() {
@@ -48,6 +48,8 @@ $('#login').on('click',function(event){
         var message = messageClient.newMessage('David', 'Hello David from ' +username);
         messageClient.send(message);
     }).fail(handleError);
+
+    */
 
 
     var eventListener = {
@@ -59,6 +61,7 @@ $('#login').on('click',function(event){
             }
         }
     }
+
 
     messageClient.addEventListener(eventListener);
 

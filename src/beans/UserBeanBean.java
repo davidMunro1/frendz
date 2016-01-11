@@ -3,10 +3,7 @@ package beans;
 import Helper.HashHelper;
 //import com.google.api.server.spi.auth.common.User;
 import com.google.appengine.api.blobstore.BlobKey;
-import com.google.appengine.api.images.Image;
-import com.google.appengine.api.images.ImagesService;
-import com.google.appengine.api.images.ImagesServiceFactory;
-import com.google.appengine.api.images.Transform;
+import com.google.appengine.api.images.*;
 import hibernate.*;
 import org.hibernate.*;
 import org.hibernate.criterion.*;
@@ -18,13 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Local;
 import javax.ejb.SessionContext;
+import javax.jws.soap.SOAPBinding;
 
 /**
  * Created by davidmunro on 11/12/2015.
  */
 @Stateful(name = "UserSession")
 @Local
-public class UserBeanBean implements LocalUser, Serializable{
+public class UserBeanBean implements LocalUser, Serializable {
 
     private int USER_ID;
     private SessionContext sessionContext;
@@ -38,15 +36,16 @@ public class UserBeanBean implements LocalUser, Serializable{
     private Byte TRUE = 1;
     private Byte FALSE = 0;
 
-    public UserBeanBean() {}
+    public UserBeanBean() {
+    }
 
     @Override
-    public void initializeSessionBean(int userID){
+    public void initializeSessionBean(int userID) {
         this.USER_ID = userID;
     }
 
     @Override
-    public int getUSER_ID(){
+    public int getUSER_ID() {
         return USER_ID;
     }
 
@@ -72,13 +71,13 @@ public class UserBeanBean implements LocalUser, Serializable{
             user.setSchool(school);
             user.setConfirmed(confirmed);
             session.save(user);
-            System.out.println("user id :" +user.getId());
+            System.out.println("user id :" + user.getId());
             setUSER_ID(user.getId());
             tx.commit();
             success = true;
-        }catch (Exception ee){
-            System.out.println("Error adding to DB : " +ee.getMessage());
-        }finally {
+        } catch (Exception ee) {
+            System.out.println("Error adding to DB : " + ee.getMessage());
+        } finally {
             session.close();
         }
         return success;
@@ -86,38 +85,36 @@ public class UserBeanBean implements LocalUser, Serializable{
 
     @Override
     public boolean handleLogin(String email, String password) {
-        if(sessionFactory==null){
+        if (sessionFactory == null) {
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
         boolean authorise = false;
         String hashedPass = HashHelper.createHash(password);
 
-        try{
+        try {
             Query q2 = session.createQuery("from UserEntity as u where u.email = :email and u.password = :password");
             q2.setString("email", email);
             q2.setString("password", hashedPass);
             List list = q2.list();
-            if(list.size() == 1){
-                UserEntity user = (UserEntity)list.get(0);
+            if (list.size() == 1) {
+                UserEntity user = (UserEntity) list.get(0);
                 setUSER_ID(user.getId());
 
-                if(user.getConfirmed()==1){
+                if (user.getConfirmed() == 1) {
                     authorise = true;
-                }
-                else if(user.getConfirmed()==0){
+                } else if (user.getConfirmed() == 0) {
                     authorise = false;
                 }
-            }
-            else if(list.size() == 0){
+            } else if (list.size() == 0) {
                 System.out.println("BEAN - Wrong email or password");
                 authorise = false;
             }
 
-        }catch(RuntimeException ee){
+        } catch (RuntimeException ee) {
             System.out.println("Error in log in");
             ee.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -125,11 +122,10 @@ public class UserBeanBean implements LocalUser, Serializable{
     }
 
     @Override
-    public boolean handleConfirmation(String authToken, String email, String password) {
+    public boolean handleConfirmation(String authToken, String email) {
         boolean confirmed = false;
 
-        String hashPass = HashHelper.createHash(password);
-        if(sessionFactory==null){
+        if (sessionFactory == null) {
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
@@ -137,46 +133,81 @@ public class UserBeanBean implements LocalUser, Serializable{
         UserEntity user = null;
         String retToken = "";
 
-        try{
+        try {
             Query query = session.createQuery("from UserEntity as u where u.email = :email and u.authorisationToken = :authToken");
-
             query.setString("email", email);
             query.setString("authToken", authToken);
-            List <UserEntity> list = query.list();
-            if(list.size() > 0){
+            List<UserEntity> list = query.list();
+            if (list.size() > 0) {
                 user = list.get(0);
                 retToken = user.getAuthorisationToken();
                 setUSER_ID(user.getId());
-
             }
-            if(authToken.equals(retToken)){
-                session.beginTransaction();
-                user.setConfirmed((byte)1);
-                user.setPassword(hashPass);
-                session.save(user);
-                session.getTransaction().commit();
-                confirmed = true;
-            }
-            else if(!authToken.equals(retToken)){
+            if (authToken != null) {
+                if (authToken.equals(retToken) && user != null) {
+                    session.beginTransaction();
+                    user.setConfirmed(TRUE);
+                    session.save(user);
+                    session.getTransaction().commit();
+                    confirmed = true;
+                } else if (!authToken.equals(retToken)) {
+                    confirmed = false;
+                }
+            } else {
                 confirmed = false;
             }
 
-        }catch(Exception ee){
+
+        } catch (Exception ee) {
             System.out.println("Error handling confirmation");
             ee.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
         return confirmed;
     }
 
+    /**
+     * Set the users password
+     *
+     * @param password The password to be set
+     * @return boolean if setting was successful
+     */
     @Override
-    public boolean createProfile(int age, String gender, String soughtGender, String programme, String bio){
+    public boolean setPassword(String password) {
+        if (sessionFactory == null) {
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
+        boolean added = false;
+        String hashPass = HashHelper.createHash(password);
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+            UserEntity user = (UserEntity) session.get(UserEntity.class, getUSER_ID());
+            user.setPassword(hashPass);
+            session.save(user);
+            tx.commit();
+            added = true;
+        } catch (HibernateException ee) {
+            if (tx != null) tx.rollback();
+            System.out.println("error setting password");
+        } finally {
+            session.close();
+        }
+
+        return added;
+    }
+
+
+    @Override
+    public boolean createProfile(int age, String gender, String soughtGender, String programme, String bio) {
         Session session = sessionFactory.openSession();
         boolean success = false;
         Transaction tx;
 
-        try{
+        try {
             tx = session.beginTransaction();
             UserProfileEntity profile = new UserProfileEntity();
             profile.setUserId(getUSER_ID());
@@ -188,34 +219,32 @@ public class UserBeanBean implements LocalUser, Serializable{
             session.save(profile);
             tx.commit();
             success = true;
-        }catch (HibernateException ee){
+        } catch (HibernateException ee) {
             System.out.println(ee.getMessage());
+        } finally {
+            session.close();
         }
-        //finally {
-        //    session.close();
-        //}
 
         return success;
     }
 
     @Override
-    public UserProfileEntity getProfile(){
+    public UserProfileEntity getProfile() {
         Session session = sessionFactory.openSession();
         UserProfileEntity profile = null;
 
-        try{
+        try {
             Query query = session.createQuery("from UserProfileEntity as p where p.userId = :id");
             query.setInteger("id", getUSER_ID());
             List<UserProfileEntity> list = query.list();
-            if(list.size() > 0){
+            if (list.size() > 0) {
                 profile = list.get(0);
-            }
-            else{
+            } else {
                 System.out.println("error in retrieving profile");
             }
-        }catch (Exception ee){
+        } catch (Exception ee) {
             System.out.println(ee.getMessage());
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -223,9 +252,9 @@ public class UserBeanBean implements LocalUser, Serializable{
     }
 
     @Override
-    public UserProfileEntity getUserProfile(int userID){
+    public UserProfileEntity getUserProfile(int userID) {
         Session session = sessionFactory.openSession();
-        UserProfileEntity user = (UserProfileEntity)session.get(UserProfileEntity.class, userID);
+        UserProfileEntity user = (UserProfileEntity) session.get(UserProfileEntity.class, userID);
         return user;
     }
 
@@ -235,20 +264,24 @@ public class UserBeanBean implements LocalUser, Serializable{
 
     /**
      * Add the image key string to the database
+     *
      * @param blobKeyString The key string of the image uploaded by user
-     * @param imageNumber The image number to set it to.
+     * @param imageNumber   The image number to set it to.
      * @return
      */
     @Override
-    public String addImage(String blobKeyString, int imageNumber){
+    public String addImage(String blobKeyString, int imageNumber) {
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
 
         Session session = sessionFactory.openSession();
         Transaction tx;
 
-        try{
+        try {
             tx = session.beginTransaction();
-            UserProfileEntity user = (UserProfileEntity)session.get(UserProfileEntity.class, getUSER_ID());
-            switch (imageNumber){
+            UserProfileEntity user = (UserProfileEntity) session.get(UserProfileEntity.class, getUSER_ID());
+            switch (imageNumber) {
                 case 1:
                     user.setImage1(blobKeyString);
                     break;
@@ -270,10 +303,10 @@ public class UserBeanBean implements LocalUser, Serializable{
 
             session.update(user);
             tx.commit();
-        }catch (HibernateException ee){
+        } catch (HibernateException ee) {
             System.out.println("Error in hibernate syntax");
             ee.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -283,42 +316,45 @@ public class UserBeanBean implements LocalUser, Serializable{
     /**
      * Retrieve the image key string from the database for the user
      * that is currently logged in.
+     *
      * @return
      */
     @Override
-    public String getImage(){
+    public String getImage() {
         return getProfile().getImage1();
     }
 
     /**
      * Retrieve the first image of the specified user, for use in
      * browse user function.
+     *
      * @param userID
      * @return
      */
     @Override
-    public String getImage(int userID){
+    public String getImage(int userID) {
         Session session = sessionFactory.openSession();
-        UserProfileEntity user = (UserProfileEntity)session.get(UserEntity.class, userID);
+        UserProfileEntity user = (UserProfileEntity) session.get(UserEntity.class, userID);
         return user.getImage1();
     }
 
     /**
      * To be used for the browse function, will return a list of all users that
      * match the required criteria.
+     *
      * @return a list of all users that match criteria.
      */
     @Override
-    public List<NextUser> browseAllUsers(){
-        if(sessionFactory==null){
+    public List<NextUser> browseAllUsers() {
+        if (sessionFactory == null) {
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
-        UserEntity user = (UserEntity)session.get(UserEntity.class, getUSER_ID());
-        UserProfileEntity usersProfile = (UserProfileEntity)session.get(UserProfileEntity.class, getUSER_ID());
+        UserEntity user = (UserEntity) session.get(UserEntity.class, getUSER_ID());
+        UserProfileEntity usersProfile = (UserProfileEntity) session.get(UserProfileEntity.class, getUSER_ID());
         List<Integer> ids = new ArrayList<>();
 
-        System.out.println("The user is looking for..." +usersProfile.getSoughtGender());
+        System.out.println("The user is looking for..." + usersProfile.getSoughtGender());
 
         Criteria criteria = session.createCriteria(UserEntity.class);
         //TODO: add below line when testing completed.
@@ -327,7 +363,7 @@ public class UserBeanBean implements LocalUser, Serializable{
         criteria.add(Restrictions.ne("id", user.getId()));
         List<UserEntity> list = criteria.list();
 
-        for(int i = 0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             ids.add(list.get(i).getId());
         }
 
@@ -341,12 +377,12 @@ public class UserBeanBean implements LocalUser, Serializable{
         c.setFirstResult(getBrowseIndex());
         List<UserProfileEntity> matchedUsers = c.list();
 
-        setBrowseIndex(browseIndex+matchedUsers.size());
+        setBrowseIndex(browseIndex + matchedUsers.size());
         List<NextUser> nextUsers = new ArrayList<>();
 
-        for(int i = 0; i < matchedUsers.size(); i++){
+        for (int i = 0; i < matchedUsers.size(); i++) {
             NextUser nextUser = new NextUser();
-            UserEntity userr = (UserEntity)session.get(UserEntity.class, matchedUsers.get(i).getUserId());
+            UserEntity userr = (UserEntity) session.get(UserEntity.class, matchedUsers.get(i).getUserId());
             nextUser.setFirstName(userr.getFirstName());
             nextUser.setPictureString(matchedUsers.get(i).getImage1());
             nextUser.setProgramme(matchedUsers.get(i).getProgramme());
@@ -360,17 +396,18 @@ public class UserBeanBean implements LocalUser, Serializable{
 
     /**
      * Handle like button clicked
+     *
      * @param likedUserID the ID of the profile that the user likes
      */
     @Override
-    public void handleLike(int likedUserID){
-        if(sessionFactory==null){
+    public void handleLike(int likedUserID) {
+        if (sessionFactory == null) {
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             RelationshipsEntity relationshipsEntity = new RelationshipsEntity();
             relationshipsEntity.setUser1(getUSER_ID());
@@ -384,34 +421,35 @@ public class UserBeanBean implements LocalUser, Serializable{
             Criteria criteria = session.createCriteria(RelationshipsEntity.class);
             criteria.add(Restrictions.eq("user1", likedUserID));
             criteria.add(Restrictions.eq("like", TRUE));
-            if(criteria.list().size()>0){
+            if (criteria.list().size() > 0) {
                 //TODO: There was a match, initialise messaging.
             }
 
-        }catch(HibernateException ee){
-            try{
+        } catch (HibernateException ee) {
+            try {
                 tx.rollback();
-            }catch(RuntimeException rbe){
+            } catch (RuntimeException rbe) {
                 System.out.println(rbe.getMessage());
             }
-        }finally {
+        } finally {
             session.close();
         }
     }
 
     /**
      * Handle dislike button clicked
+     *
      * @param dislikedUserID the id of the profile that the user dislikes
      */
     @Override
-    public void handleDislike(int dislikedUserID){
-        if(sessionFactory==null){
+    public void handleDislike(int dislikedUserID) {
+        if (sessionFactory == null) {
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             RelationshipsEntity relationshipsEntity = new RelationshipsEntity();
             relationshipsEntity.setUser1(getUSER_ID());
@@ -422,18 +460,18 @@ public class UserBeanBean implements LocalUser, Serializable{
             session.save(relationshipsEntity);
             tx.commit();
 
-        }catch(HibernateException ee){
-            try{
+        } catch (HibernateException ee) {
+            try {
                 tx.rollback();
-            }catch(RuntimeException rbe){
+            } catch (RuntimeException rbe) {
                 System.out.println(rbe.getMessage());
             }
-        }finally {
+        } finally {
             session.close();
         }
     }
 
-    public Image getImageObject(BlobKey blobKey){
+    public Image getImageObject(BlobKey blobKey) {
         ImagesService imagesService = ImagesServiceFactory.getImagesService();
 
         Image oldImage = ImagesServiceFactory.makeImageFromBlob(blobKey);
@@ -445,27 +483,41 @@ public class UserBeanBean implements LocalUser, Serializable{
         return newImage;
     }
 
-    public void setBrowseIndex(int browseIndex){
+    public void setBrowseIndex(int browseIndex) {
         this.browseIndex = browseIndex;
     }
 
-    public int getBrowseIndex(){
+    public int getBrowseIndex() {
         return browseIndex;
     }
 
     /**
      * Sets the total number of matched results from the browse query.
+     *
      * @param matchedResults the initial number of results from the query
      */
-    public void setMatchedResults(int matchedResults){
+    public void setMatchedResults(int matchedResults) {
         this.matchedResults = matchedResults;
     }
 
     /**
      * Returns the total number of matched results in the browse query.
+     *
      * @return
      */
-    public int getMatchedResults(){
+    public int getMatchedResults() {
         return matchedResults;
     }
+
+
+    public String getServingURL(String blobKeyString){
+        BlobKey blobKey = new BlobKey(blobKeyString);
+        ImagesService imagesService = ImagesServiceFactory.getImagesService();
+        //BlobKey blobKey = new BlobKey(bean.getImage());
+        ServingUrlOptions servingUrlOptions = ServingUrlOptions.Builder.withBlobKey(blobKey);
+        String url = imagesService.getServingUrl(servingUrlOptions);
+
+        return url;
+    }
+
 }

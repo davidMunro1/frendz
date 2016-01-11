@@ -7,6 +7,7 @@ import com.google.appengine.api.images.Image;
 import com.google.appengine.api.images.ImagesService;
 import com.google.appengine.api.images.ImagesServiceFactory;
 import com.google.appengine.api.images.ServingUrlOptions;
+import com.google.appengine.api.users.User;
 import hibernate.NextUser;
 import hibernate.UserEntity;
 import hibernate.UserProfileEntity;
@@ -29,27 +30,26 @@ import java.util.Map;
 public class FrendzServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private int USER_ID = 10;
-    private UserBeanBean bean = new UserBeanBean();
+    private UserBeanBean bean; //= new UserBeanBean();
 
     private Byte TRUE = 1;
     private Byte FALSE = 0;
-    private String ERROR_SIGN_UP = "Sign up failed";
 
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        bean = (UserBeanBean)request.getSession().getAttribute("bean");
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
-            response.sendRedirect("homepage.jsp");
-            //handleLogin(request,response);
-
+            //response.sendRedirect("homepage.jsp");
+            //response.sendRedirect("profileCreation.jsp");
+            handleLogin(request,response);
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
             handleSignUp(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Confirm")){
-            System.out.println("Confirm account");
+            System.out.println("confirm account");
             handleConfirmation(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
             System.out.println("create profile");
@@ -76,6 +76,10 @@ public class FrendzServlet extends HttpServlet {
     }
 
     private void handleLogin(HttpServletRequest request, HttpServletResponse response){
+        if(bean==null){
+            bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
+        }
         boolean correctUser = bean.handleLogin(request.getParameter("email"), request.getParameter("password"));
         System.out.println("user exists : " +correctUser);
         if(correctUser){
@@ -94,6 +98,10 @@ public class FrendzServlet extends HttpServlet {
     }
 
     private void handleSignUp(HttpServletRequest request, HttpServletResponse response) {
+        if(bean == null){
+            bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
+        }
         byte confirmed =0;
         String toHash = request.getParameter("email").concat(request.getParameter("university"));
         String authToken = HashHelper.createHash(toHash);
@@ -119,14 +127,11 @@ public class FrendzServlet extends HttpServlet {
     }
 
     private void handleConfirmation(HttpServletRequest request, HttpServletResponse response){
+
         try{
-            //String authToken = request.getParameter("token");
-            String authToken = "aea4312f57072f07df24a846546ed584";
-            //String email = request.getParameter("email");
-            String email = "dadae@se";
-            String password = request.getParameter("password");
-            boolean confirm = bean.handleConfirmation(authToken, email, password);
-            if(confirm){
+            boolean pass = bean.setPassword(request.getParameter("password"));
+
+            if(pass){
                 response.sendRedirect("profileCreation.jsp");
             }
             else{
@@ -138,9 +143,11 @@ public class FrendzServlet extends HttpServlet {
     }
 
     private void handleCreateProfile(HttpServletRequest request, HttpServletResponse response){
-        //bean.setUSER_ID(17);
         boolean uploadPic = false;
         boolean created;
+        if(bean == null){
+            bean = (UserBeanBean)request.getSession().getAttribute("bean");
+        }
 
         created = bean.createProfile(Integer.valueOf(request.getParameter("age")),
                 request.getParameter("gender"),
@@ -174,7 +181,6 @@ public class FrendzServlet extends HttpServlet {
         try{
             Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
             List<BlobKey> blobKeys = blobs.get("image1");
-
             bean.addImage(blobKeys.get(0).getKeyString(), 1);
 
             List<BlobKey> blobK = blobs.get("image2");
@@ -184,11 +190,13 @@ public class FrendzServlet extends HttpServlet {
 
 
         }catch (Exception ee){
-            System.out.println("Error");
+            System.out.println("Error" +ee.getMessage());
             ee.printStackTrace();
         }
 
         return pictureUploadSuccess;
     }
+
+
 
 }
