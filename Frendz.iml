@@ -61,7 +61,6 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="javax.ejb" level="project" />
     <orderEntry type="library" name="org.glassfish:javax.ejb:3.0-b29" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.36" level="project" />
     <orderEntry type="library" name="com.google.appengine.tools:appengine-gcs-client:0.5" level="project" />
     <orderEntry type="library" name="javax.mail-api-1.5.1" level="project" />
     <orderEntry type="library" name="activation-1.1" level="project" />
@@ -75,5 +74,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-5.1.38-bin" level="project" />
   </component>
 </module>

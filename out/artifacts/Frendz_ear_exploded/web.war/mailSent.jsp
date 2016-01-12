@@ -15,7 +15,7 @@
 
 <div class="container">
 
-  <div class="center-vertical">
+  <div>
     <img id="logo" src="images/logo.png">
     <h1 class="center">An email has been sent to <%=request.getParameter("email")%>, please go to your email and click on the confirmation link!</h1>
     <p>&nbsp;</p>

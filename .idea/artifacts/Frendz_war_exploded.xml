@@ -9,7 +9,6 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
-          <element id="library" level="project" name="mysql-connector-java-5.1.36" />
           <element id="library" level="project" name="javax.ejb" />
           <element id="library" level="project" name="com.google.appengine.tools:appengine-gcs-client:0.5" />
           <element id="library" level="project" name="Java EE 6-Java EE 6" />

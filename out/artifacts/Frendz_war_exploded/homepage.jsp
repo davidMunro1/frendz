@@ -1,4 +1,6 @@
-<%--
+<%@ page import="beans.UserBeanBean" %>
+<%@ page import="hibernate.NextUser" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: davidmunro
   Date: 30/12/2015
@@ -11,36 +13,46 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <title>Frendz</title>
+
+    <%
+        //        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+        UserBeanBean bean = new UserBeanBean();
+        bean.setUSER_ID(26);
+        ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
+
+    %>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/sinch.min.js"></script>
 </head>
 <body id="hkr" class="center">
 
+    <nav>
+        <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
+        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <div id="logout" class="menu_item">Logout</div>
+    </nav>
+
     <div id="school_title" class="title">Högskolan Kristianstad</div>
-    <div id="browse_button">Browse</div>
-    <%--<div id="popular_title">Popular users</div>--%>
+    <a href="browse.jsp"><div id="browse_button">Browse</div></a>
     <div id="popular_container">
         <div class="popular_user">
-            <img class="popular_user_picture" src="images/juraj.jpg">
-            Ron
+            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(0).getPictureString()) %>">
+            src="<%= users.get(0).getFirstName() %>">
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="images/juraj.jpg">
-            David
+            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(1).getPictureString()) %>">
+            src="<%= users.get(1).getFirstName() %>">
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="images/juraj.jpg">
-            John
+            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(2).getPictureString()) %>">
+            src="<%= users.get(2).getFirstName() %>">
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="images/juraj.jpg">
-            Juraj
+            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(3).getPictureString()) %>">
+            src="<%= users.get(3).getFirstName() %>">
         </div>
     </div>
-
-    <nav><img id="mini_logo" src="images/logo.png"></nav>
-
-    <%--<h1>This is the homepage for the user</h1>--%>
 
   <div id="chatArea"></div>
 

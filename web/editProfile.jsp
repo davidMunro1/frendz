@@ -19,15 +19,23 @@
 </head>
 <body id="bgr" class="center">
 
+    <nav>
+        <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
+        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <div id="logout" class="menu_item">Logout</div>
+    </nav>
 
-<div class="container">
-    <div class="form center-vertical">
-        <img id="logo" src="images/logo.png">
+    <div class="container">
+    <div class="form">
+        <%--<img id="logo" src="images/logo.png">--%>
         <form action="<%= blobstoreService.createUploadUrl("/FrendzServlet", UploadOptions.Builder.withGoogleStorageBucketName("images_frendz/user_images")) %>" method="post" enctype="multipart/form-data">
+            <div style="position: relative; left: 0px; width: 50%; margin-top: 100px; margin-bottom: 100px;">
             <input name="secondName" placeholder="Second name" type="text"><br>
             <input name="password" placeholder="Password" type="password"><br>
             <input name="bio" placeholder="Bio" type="text"><br>
+            </div>
 
+            <div style="position: absolute; left: 20%; width: 50%; top: 120px;">
             <div style="position:relative;">
                 <div id="image1" class="file">Select an image</div>
                 <input type="file" name="image1" class="file_input" onchange="document.getElementById('image1').innerHTML = this.value;" />
@@ -39,7 +47,6 @@
             <div style="position:relative;">
                 <div id="image3" class="file">Select an image</div>
                 <input type="file" name="image1" class="file_input" onchange="document.getElementById('image3').innerHTML = this.value;" />
-
             </div>
             <div style="position:relative;">
                 <div id="image4" class="file">Select an image</div>
@@ -49,13 +56,12 @@
                 <div id="image5" class="file">Select an image</div>
                 <input type="file" name="image1" class="file_input" onchange="document.getElementById('image5').innerHTML = this.value;" />
             </div>
-
+            </div>
 
             <input id="button" type="submit" name="button" value="Save">
         </form>
     </div>
-</div>
-
+    </div>
 
 </body>
 </html>

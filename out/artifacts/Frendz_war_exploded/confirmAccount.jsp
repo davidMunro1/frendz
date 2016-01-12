@@ -17,7 +17,7 @@
 <body id="bgr" class="center">
 
 <div class="container">
-    <div class="form center-vertical">
+    <div class="form">
         <img id="logo" src="images/logo.png">
         <%
             UserBeanBean bean = new UserBeanBean();
