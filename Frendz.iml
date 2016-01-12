@@ -35,7 +35,7 @@
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$USER_HOME$/Documents/appengine-java-sdk-1.9.30</sdk-home-path>
+        <sdk-home-path>$USER_HOME$/Desktop/appengine-java-sdk-1.9.30</sdk-home-path>
       </configuration>
     </facet>
     <facet type="javaeeApplication" name="javaEEApplication">

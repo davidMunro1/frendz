@@ -16,8 +16,15 @@
     <title></title>
 
     <%
-        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+//        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+        UserBeanBean bean = new UserBeanBean();
+        bean.setUSER_ID(26);
         ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
+//        String[] keys = new String[users.size()];
+//        for(int j=0; j<keys.length; j++)
+//            keys[j] = users.get(j).getPictureString();
+//        String key1 = users.get(0).getPictureString();
+
     %>
 
     <script>
@@ -31,7 +38,8 @@
             firstName: "<%= users.get(i).getFirstName() %>",
             age: <%= users.get(i).getAge() %>,
             programme: "<%= users.get(i).getProgramme() %>",
-            picture: "<%= users.get(i).getPictureString() %>"
+            bio: "<%= users.get(i).getBio() %>",
+            <%--picture: "<%= bean.getServingURL(users.get(i).getPictureString()) %>"--%>
         };
         usersArray[<%= i %>] = user;
         <%}%>
@@ -73,12 +81,17 @@
         document.getElementById("name").innerHTML = usersArray[index].firstName;
         document.getElementById("age").innerHTML = usersArray[index].age;
         document.getElementById("programme").innerHTML = usersArray[index].programme;
+        document.getElementById("bio").innerHTML = usersArray[index].bio;
         document.getElementById("picture").src = usersArray[index].picture;
     }
+
     document.getElementById("name").innerHTML = usersArray[0].firstName;
     document.getElementById("age").innerHTML = usersArray[0].age;
     document.getElementById("programme").innerHTML = usersArray[0].programme;
+    document.getElementById("bio").innerHTML = usersArray[0].bio;
+//    document["picture"].src = usersArray[0].picture;
     document.getElementById("picture").src = usersArray[0].picture;
+
 </script>
 
 </body>
