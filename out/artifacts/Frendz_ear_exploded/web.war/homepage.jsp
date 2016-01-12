@@ -1,3 +1,4 @@
+<%@ page import="beans.UserBeanBean" %>
 <%--
   Created by IntelliJ IDEA.
   User: davidmunro
@@ -16,6 +17,7 @@
 
   <h1>This is the homepage for the user</h1>
     <button id="login">Login</button>
+
 
 
   <div id="chatArea"></div>

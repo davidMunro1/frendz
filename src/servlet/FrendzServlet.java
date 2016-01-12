@@ -35,17 +35,18 @@ public class FrendzServlet extends HttpServlet {
     private Byte TRUE = 1;
     private Byte FALSE = 0;
 
+    private String ERROR_SIGN_UP = "Invalid email or password, please try again";
+
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         bean = (UserBeanBean)request.getSession().getAttribute("bean");
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
-            System.out.println("login");
             handleLogin(request,response);
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
-            handleSignUp(request, response);
+            //handleSignUp(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Confirm")){
             System.out.println("confirm account");
             handleConfirmation(request, response);
@@ -81,9 +82,11 @@ public class FrendzServlet extends HttpServlet {
             }
         }
         else if(!correctUser){
-            System.out.println("user does not exist or account not confirmed!");
-            //TODO: Need to send error message back to user, user doesnt exist or wrong combination.
-
+            try {
+                response.sendRedirect("index.jsp?error="+ERROR_SIGN_UP);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -100,7 +103,6 @@ public class FrendzServlet extends HttpServlet {
                email, request.getParameter("university"), authToken);
 
         if(signUp){
-            //TODO: Check mail was sent?
             MailSender mailSender = new MailSender();
             mailSender.sendMessage(email, authToken);
             try {

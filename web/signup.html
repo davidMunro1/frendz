@@ -8,6 +8,40 @@
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/richwidgets-demo.min.js"></script>
     <script>
+
+        function validateInput(){
+            if(document.getElementById("firstName").value === ""){
+                document.getElementById("firstNameError").innerHTML = 'You must enter a first name';
+                return false;
+            }
+            else{
+                document.getElementById("firstNameError").innerHTML = '';
+            }
+            if(document.getElementById("secondName").value === ""){
+                document.getElementById("secondNameError").innerHTML = 'You must enter a second name';
+                return false;
+            }
+            else{
+                document.getElementById("secondNameError").innerHTML = '';
+            }
+
+            var email = document.getElementById("email").value;
+
+            $.ajax({
+                type: 'POST',
+                url: 'emailAuth.php',
+                data: 'email',
+                dataType: 'json',
+                success: function(result) {
+                    console.log(result[0]);
+                    window.alert("Great succ");
+                },
+                fail: function(){
+                    window.alert("Error!");
+                }
+            });
+        }
+
         $(function() {
             var schools = [
                 "Chalmers tekniska högskola",
@@ -67,16 +101,17 @@
 <div class="container">
     <div class="form center-vertical">
         <img id="logo" src="images/logo.png">
-        <form action="/FrendzServlet" method="post">
-            <input name="firstName" placeholder="First name" type="text"><br>
-            <input name="lastName" placeholder="Last name" type="text"><br>
-            <input name="email" placeholder="E-mail" type="text"><br>
+        <form action="/FrendzServlet" method="post" id="signUp" name="signUp" onsubmit="return validateInput();">
+            <input id="firstName" name="firstName" placeholder="First name" type="text"><span id="firstNameError"></span><br>
+            <input id="secondName" name="lastName" placeholder="Last name" type="text"><span id="secondNameError"></span><br>
+            <input id="email" name="email" placeholder="E-mail" type="text"><span id="emailError"></span><br>
             <!--Universities-->
             <input id="schools" class="form-control" name="university" placeholder="University" type="text"><br>
             <input id="button" type="submit" name="button" value="Sign up">
         </form>
     </div>
 </div>
+
 
 </body>
 </html>

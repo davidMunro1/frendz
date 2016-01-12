@@ -306,6 +306,22 @@ public class UserBeanBean implements LocalUser, Serializable {
         return profile;
     }
 
+    @Override
+    public UserEntity getUser(){
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
+        UserEntity user = null;
+        try{
+            Session session = sessionFactory.openSession();
+            user = (UserEntity)session.get(UserEntity.class, getUSER_ID());
+        }catch (HibernateException ee){
+            System.out.println("Error getting user : " +ee.getMessage());
+        }
+
+        return user;
+    }
+
     /**
      * Returns a UserProfileEntity with the specified id
      * @param userID the ID used to specify user

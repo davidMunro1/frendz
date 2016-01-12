@@ -11,47 +11,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d60b4225-e892-44fc-b372-cd0926f19934" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_38_bin.xml" />
-      <change type="DELETED" beforePath="C:\Users\davidmunro\IdeaProjects\Frendz\.idea\libraries\mysql_connector_java_5_1_36.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\davidmunro\IdeaProjects\Frendz\out\artifacts\Frendz_war_exploded\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\davidmunro\IdeaProjects\Frendz\web\index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/servlet/FrendzServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/servlet/FrendzServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/servlet/FrendzServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/servlet/FrendzServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/servlet/FrendzServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/servlet/FrendzServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/servlet/FrendzServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/servlet/FrendzServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Frendz/servlet/FrendzServlet.class" afterPath="$PROJECT_DIR$/out/production/Frendz/servlet/FrendzServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/LocalUser.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/LocalUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/LocalUser.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/LocalUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Frendz/beans/LocalUser.class" afterPath="$PROJECT_DIR$/out/production/Frendz/beans/LocalUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/LocalUser.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/LocalUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/LocalUser.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/LocalUser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/UserBeanBean.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/UserBeanBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/UserBeanBean.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/UserBeanBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/UserBeanBean.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/UserBeanBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/UserBeanBean.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/UserBeanBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Frendz/beans/UserBeanBean.class" afterPath="$PROJECT_DIR$/out/production/Frendz/beans/UserBeanBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/UserBeanBeanTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/beans/UserBeanBeanTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/UserBeanBeanTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/beans/UserBeanBeanTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/UserBeanBeanTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/beans/UserBeanBeanTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/UserBeanBeanTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/beans/UserBeanBeanTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Frendz/beans/UserBeanBeanTest.class" afterPath="$PROJECT_DIR$/out/production/Frendz/beans/UserBeanBeanTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/appengine-generated/local_db.bin" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/appengine-generated/local_db.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frendz.iml" afterPath="$PROJECT_DIR$/Frendz.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/FrendzServlet.java" afterPath="$PROJECT_DIR$/src/servlet/FrendzServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Frendz_ear_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Frendz_ear_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Frendz_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Frendz_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans/LocalUser.java" afterPath="$PROJECT_DIR$/src/beans/LocalUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans/UserBeanBean.java" afterPath="$PROJECT_DIR$/src/beans/UserBeanBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans/UserBeanBeanTest.java" afterPath="$PROJECT_DIR$/src/beans/UserBeanBeanTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/browse.jsp" afterPath="$PROJECT_DIR$/web/browse.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/confirmAccount.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/confirmAccount.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/confirmAccount.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/confirmAccount.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/confirmAccount.jsp" afterPath="$PROJECT_DIR$/web/confirmAccount.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/ejb.jar/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/classes/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/lib/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/lib/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ejb_exploded/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/lib/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/lib/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Frendz/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/Frendz/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/mailSent.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/mailSent.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/mailSent.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/mailSent.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/signup.html" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/signup.html" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/style/style.css" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/style/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/style/style.css" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/style/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/homepage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/homepage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/homepage.jsp" afterPath="$PROJECT_DIR$/web/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/signup.html" afterPath="$PROJECT_DIR$/web/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_ear_exploded/web.war/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Frendz_war_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Frendz.iws" />
@@ -91,24 +85,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - FrendzDB@173.194.252.254" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="FrendzDB" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="relationships" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -116,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserBeanBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserBeanBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/beans/UserBeanBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.025641">
-              <caret line="414" column="44" selection-start-line="414" selection-start-column="44" selection-end-line="414" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="322" column="5" selection-start-line="322" selection-start-column="5" selection-end-line="322" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#handleSignUp#0;class#UserBeanBean#0" expanded="false" />
@@ -132,10 +108,11 @@
                 <element signature="method#createProfile#0;class#UserBeanBean#0" expanded="false" />
                 <element signature="method#handleEditProfile#0;class#UserBeanBean#0" expanded="false" />
                 <element signature="method#getProfile#0;class#UserBeanBean#0" expanded="false" />
+                <element signature="method#getUser#0;class#UserBeanBean#0" expanded="false" />
                 <element signature="method#getUserProfile#0;class#UserBeanBean#0" expanded="false" />
                 <element signature="method#addImage#0;class#UserBeanBean#0" expanded="false" />
-                <element signature="e#12404#12405#0" expanded="true" />
-                <element signature="e#12451#12452#0" expanded="true" />
+                <element signature="e#12899#12900#0" expanded="true" />
+                <element signature="e#12946#12947#0" expanded="true" />
                 <element signature="method#getImage#1;class#UserBeanBean#0" expanded="false" />
                 <element signature="docComment;method#browseAllUsers#0;class#UserBeanBean#0" expanded="false" />
                 <element signature="method#browseAllUsers#0;class#UserBeanBean#0" expanded="false" />
@@ -145,26 +122,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FrendzServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/FrendzServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="198" column="63" selection-start-line="198" selection-start-column="63" selection-end-line="198" selection-end-column="63" />
+              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
               <folding>
                 <element signature="method#doGet#0;class#FrendzServlet#0" expanded="false" />
-                <element signature="method#handleLogin#0;class#FrendzServlet#0" expanded="false" />
-                <element signature="method#handleSignUp#0;class#FrendzServlet#0" expanded="false" />
                 <element signature="method#handleConfirmation#0;class#FrendzServlet#0" expanded="false" />
+                <element signature="method#handleCreateProfile#0;class#FrendzServlet#0" expanded="false" />
                 <element signature="method#uploadInitialImage#0;class#FrendzServlet#0" expanded="false" />
                 <element signature="method#uploadNewImages#0;class#FrendzServlet#0" expanded="false" />
               </folding>
@@ -172,11 +138,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirmAccount.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/confirmAccount.jsp">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7345133">
+              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+              <folding>
+                <element signature="e#1509#3439#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrendzDB.user" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/4692382/966da56c-0f2e-4254-ae02-49fdce417982/FrendzDB..user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/homepage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.875">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -190,10 +183,10 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="Html5" />
-        <option value="Jsp File" />
         <option value="JUnit3 Test Class" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -218,9 +211,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EJBModule/src/beans/UserSessionBean.java" />
         <option value="$PROJECT_DIR$/src/UserBeanBean.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/beans/UserSessionLocal.java" />
         <option value="$PROJECT_DIR$/META-INF/application.xml" />
         <option value="$PROJECT_DIR$/src/servlet/TheNewBeanBean.java" />
@@ -252,23 +243,25 @@
         <option value="$PROJECT_DIR$/src/hibernate/RelationshipsEntity.java" />
         <option value="$PROJECT_DIR$/src/hibernate/NextUser.java" />
         <option value="$PROJECT_DIR$/src/utils/testChat.java" />
-        <option value="$PROJECT_DIR$/web/homepage.jsp" />
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/confirmAccount.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/profileCreation.jsp" />
         <option value="$PROJECT_DIR$/web/auth.php" />
         <option value="$PROJECT_DIR$/web/js/index.js" />
         <option value="$PROJECT_DIR$/web/mailSent.jsp" />
         <option value="$PROJECT_DIR$/web/style/style.css" />
-        <option value="$PROJECT_DIR$/web/signup.html" />
         <option value="$PROJECT_DIR$/web/browse.jsp" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/966da56c-0f2e-4254-ae02-49fdce417982/console.sql" />
-        <option value="$PROJECT_DIR$/src/servlet/FrendzServlet.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/web/confirmAccount.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/homepage.jsp" />
         <option value="$PROJECT_DIR$/src/beans/LocalUser.java" />
         <option value="$PROJECT_DIR$/src/beans/UserBeanBeanTest.java" />
         <option value="$PROJECT_DIR$/src/beans/UserBeanBean.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/FrendzServlet.java" />
+        <option value="$PROJECT_DIR$/web/emailAuth.php" />
+        <option value="$PROJECT_DIR$/web/signup.html" />
       </list>
     </option>
   </component>
@@ -320,7 +313,142 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hibernate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frendz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope">
@@ -400,7 +528,7 @@
       <recent name="hibernate" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserBeanBeanTest">
+  <component name="RunManager" selected="Google AppEngine Dev Server.AppEngine Dev 1.9.30">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -915,7 +1043,7 @@
       <workItem from="1452250475270" duration="6153000" />
       <workItem from="1452261105821" duration="9528000" />
       <workItem from="1452494742817" duration="23579000" />
-      <workItem from="1452526557719" duration="13894000" />
+      <workItem from="1452526557719" duration="34312000" />
     </task>
     <task id="LOCAL-00001" summary="-First commit-&#10;Stateful session bean added. Hibernate added. Connection to cloud SQL database added.">
       <created>1450420947741</created>
@@ -977,11 +1105,17 @@
       <option name="project" value="LOCAL" />
       <updated>1452512163093</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Random users for homepage&#10;Edit profile method">
+      <created>1452597137261</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1452597137261</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300104000" />
+    <option name="totallyTimeSpent" value="320522000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,11 +1135,11 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.2677761" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.27231467" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46982056" sideWeight="0.46369138" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.7322239" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36215335" sideWeight="0.72768533" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2473525" sideWeight="0.5823817" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1033,7 +1167,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.2677761" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.27231467" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46982056" sideWeight="0.46369138" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1049,7 +1183,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.7322239" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36215335" sideWeight="0.72768533" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2473525" sideWeight="0.5823817" order="3" side_tool="true" content_ui="tabs" />
@@ -1084,7 +1218,8 @@
     <MESSAGE value="handleLike + handleDislike methods added.&#10;Sinch messaging basics added.&#10;" />
     <MESSAGE value="Image handler added. Good luck" />
     <MESSAGE value="after merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="after merge" />
+    <MESSAGE value="Random users for homepage&#10;Edit profile method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random users for homepage&#10;Edit profile method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1097,22 +1232,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/META-INF/ejb-jar.xml">
-      <provider editor-type-id="com.intellij.javaee.module.components.MethodPermissionsEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.EjbModuleGeneralEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.TransactionAttributesEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35071942">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1246,24 +1365,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/file.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5187166">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/UserProfileEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6923077">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1300,13 +1405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/NextUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15384616">
@@ -1315,35 +1413,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/MailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/auth.php">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.4827585">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1351,35 +1427,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72192514">
           <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/style/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94871795">
-          <caret line="259" column="1" selection-start-line="259" selection-start-column="1" selection-end-line="259" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/images/cross.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/homepage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/FrendzHibernateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/appengine-web.xml">
@@ -1405,6 +1459,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/profileCreation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.026737968">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4692382/966da56c-0f2e-4254-ae02-49fdce417982/FrendzDB..user_profile">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1413,10 +1496,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/auth.php">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1909263">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/beans/LocalUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/UserBeanBeanTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/FrendzHibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53846157">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/style/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84615386">
+          <caret line="259" column="1" selection-start-line="259" selection-start-column="1" selection-end-line="259" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5187166">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/homepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/FrendzServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding>
+            <element signature="method#doGet#0;class#FrendzServlet#0" expanded="false" />
+            <element signature="method#handleConfirmation#0;class#FrendzServlet#0" expanded="false" />
+            <element signature="method#handleCreateProfile#0;class#FrendzServlet#0" expanded="false" />
+            <element signature="method#uploadInitialImage#0;class#FrendzServlet#0" expanded="false" />
+            <element signature="method#uploadNewImages#0;class#FrendzServlet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51282054">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1434,74 +1600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/UserBeanBeanTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7948718">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/confirmAccount.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90909094">
-          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
-          <folding>
-            <element signature="e#336#2266#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/profileCreation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026737968">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/FrendzServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="198" column="63" selection-start-line="198" selection-start-column="63" selection-end-line="198" selection-end-column="63" />
-          <folding>
-            <element signature="method#doGet#0;class#FrendzServlet#0" expanded="false" />
-            <element signature="method#handleLogin#0;class#FrendzServlet#0" expanded="false" />
-            <element signature="method#handleSignUp#0;class#FrendzServlet#0" expanded="false" />
-            <element signature="method#handleConfirmation#0;class#FrendzServlet#0" expanded="false" />
-            <element signature="method#uploadInitialImage#0;class#FrendzServlet#0" expanded="false" />
-            <element signature="method#uploadNewImages#0;class#FrendzServlet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4692382/966da56c-0f2e-4254-ae02-49fdce417982/FrendzDB..user_profile">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/beans/UserBeanBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.025641">
-          <caret line="414" column="44" selection-start-line="414" selection-start-column="44" selection-end-line="414" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="322" column="5" selection-start-line="322" selection-start-column="5" selection-end-line="322" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#handleSignUp#0;class#UserBeanBean#0" expanded="false" />
@@ -1513,14 +1615,49 @@
             <element signature="method#createProfile#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#handleEditProfile#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#getProfile#0;class#UserBeanBean#0" expanded="false" />
+            <element signature="method#getUser#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#getUserProfile#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#addImage#0;class#UserBeanBean#0" expanded="false" />
-            <element signature="e#12404#12405#0" expanded="true" />
-            <element signature="e#12451#12452#0" expanded="true" />
+            <element signature="e#12899#12900#0" expanded="true" />
+            <element signature="e#12946#12947#0" expanded="true" />
             <element signature="method#getImage#1;class#UserBeanBean#0" expanded="false" />
             <element signature="docComment;method#browseAllUsers#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#browseAllUsers#0;class#UserBeanBean#0" expanded="false" />
             <element signature="method#getImageObject#0;class#UserBeanBean#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/file.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5575221">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/confirmAccount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.044247787">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/emailAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08928572">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7345133">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding>
+            <element signature="e#1509#3439#0" expanded="false" />
           </folding>
         </state>
       </provider>

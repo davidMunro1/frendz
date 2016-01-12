@@ -27,7 +27,7 @@
                 out.println("<div class='info_message'>Congratulations! Your account has been verified!</div>");
             else {
                 out.println("<div class='info_message'>Your account could not be verified!</div>");
-                response.setHeader("Refresh", "5;url=index.html");
+                response.setHeader("Refresh", "5;url=index.jsp");
             }
         %>
         <form action="/FrendzServlet" method="post">
@@ -38,6 +38,7 @@
 
             <input id="button" type="submit" name="button" value="Confirm">
         </form>
+
     </div>
 </div>
 
