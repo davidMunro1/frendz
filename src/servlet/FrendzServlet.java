@@ -30,7 +30,7 @@ import java.util.Map;
 public class FrendzServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private UserBeanBean bean; //= new UserBeanBean();
+    private UserBeanBean bean;
 
     private Byte TRUE = 1;
     private Byte FALSE = 0;
@@ -42,11 +42,7 @@ public class FrendzServlet extends HttpServlet {
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
             System.out.println("login");
-
-            response.sendRedirect("browse.jsp");
-            //response.sendRedirect("homepage.jsp");
-            //response.sendRedirect("profileCreation.jsp");
-            //handleLogin(request,response);
+            handleLogin(request,response);
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
             handleSignUp(request, response);
@@ -77,9 +73,7 @@ public class FrendzServlet extends HttpServlet {
             request.getSession().setAttribute("bean", bean);
         }
         boolean correctUser = bean.handleLogin(request.getParameter("email"), request.getParameter("password"));
-        System.out.println("user exists : " +correctUser);
         if(correctUser){
-            //go to homepage
             try {
                 response.sendRedirect("homepage.jsp");
             } catch (IOException e) {
@@ -88,7 +82,7 @@ public class FrendzServlet extends HttpServlet {
         }
         else if(!correctUser){
             System.out.println("user does not exist or account not confirmed!");
-            //TODO: Need to send error message back to user, user doesnt exist, not confirmed or wrong combination.
+            //TODO: Need to send error message back to user, user doesnt exist or wrong combination.
 
         }
     }
@@ -98,16 +92,15 @@ public class FrendzServlet extends HttpServlet {
             bean = new UserBeanBean();
             request.getSession().setAttribute("bean", bean);
         }
-        byte confirmed =0;
         String toHash = request.getParameter("email").concat(request.getParameter("university"));
         String authToken = HashHelper.createHash(toHash);
         String email = request.getParameter("email");
 
         boolean signUp = bean.handleSignUp(request.getParameter("firstName"), request.getParameter("lastName"),
-               email, request.getParameter("university"), confirmed, authToken);
+               email, request.getParameter("university"), authToken);
 
         if(signUp){
-            System.out.println("send mail with activation code, user signed up");
+            //TODO: Check mail was sent?
             MailSender mailSender = new MailSender();
             mailSender.sendMessage(email, authToken);
             try {
@@ -117,12 +110,17 @@ public class FrendzServlet extends HttpServlet {
             }
         }
         else if(!signUp){
+            //TODO: Decide what happens if sign up failed
             System.out.println("sign up failed");
-
         }
     }
 
     private void handleConfirmation(HttpServletRequest request, HttpServletResponse response){
+        bean = (UserBeanBean)request.getSession().getAttribute("bean");
+        if(bean==null){
+            bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
+        }
 
         try{
             boolean pass = bean.setPassword(request.getParameter("password"));
@@ -131,6 +129,7 @@ public class FrendzServlet extends HttpServlet {
                 response.sendRedirect("profileCreation.jsp");
             }
             else{
+                //TODO: If confirmation fails...
                 System.out.println("confirmation failed");
             }
         }catch (Exception ee){
@@ -141,8 +140,10 @@ public class FrendzServlet extends HttpServlet {
     private void handleCreateProfile(HttpServletRequest request, HttpServletResponse response){
         boolean uploadPic = false;
         boolean created;
+        bean = (UserBeanBean)request.getSession().getAttribute("bean");
         if(bean == null){
-            bean = (UserBeanBean)request.getSession().getAttribute("bean");
+            bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
         }
 
         created = bean.createProfile(Integer.valueOf(request.getParameter("age")),
@@ -152,47 +153,105 @@ public class FrendzServlet extends HttpServlet {
                 request.getParameter("bio"));
 
         if(created){
-            uploadPic = uploadImage(request,response);
+            uploadPic = uploadInitialImage(request);
         }
         else{
             System.out.println("failed in creating profile");
         }
 
-
         if(created && uploadPic){
-            ImagesService imagesService = ImagesServiceFactory.getImagesService();
-            BlobKey blobKey = new BlobKey(bean.getImage());
-            ServingUrlOptions servingUrlOptions = ServingUrlOptions.Builder.withBlobKey(blobKey);
-
-            System.out.println("profile created");
+            try {
+                response.sendRedirect("homepage.jsp");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        else if(created==false || uploadPic==false){
+        else if(!created || !uploadPic){
             System.out.println("failed in creation of profile");
         }
     }
 
-    private boolean uploadImage(HttpServletRequest request, HttpServletResponse response){
-
+    private boolean uploadInitialImage(HttpServletRequest request){
         boolean pictureUploadSuccess = false;
         try{
             Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
             List<BlobKey> blobKeys = blobs.get("image1");
-            bean.addImage(blobKeys.get(0).getKeyString(), 1);
+            boolean picOne = bean.addImage(blobKeys.get(0).getKeyString(), 1);
 
             List<BlobKey> blobK = blobs.get("image2");
-            bean.addImage(blobK.get(0).getKeyString(), 2);
+            boolean picTwo = bean.addImage(blobK.get(0).getKeyString(), 2);
 
-            pictureUploadSuccess = true;
-
+            if(picOne && picTwo){
+                pictureUploadSuccess = true;
+            }
+            else{
+                System.out.println("Error adding images!");
+            }
 
         }catch (Exception ee){
-            System.out.println("Error" +ee.getMessage());
+            System.out.println("Error in adding image : " +ee.getMessage());
             ee.printStackTrace();
         }
 
         return pictureUploadSuccess;
     }
 
+    private boolean uploadNewImages(HttpServletRequest request){
+        boolean pictureUploadSuccess = false;
+        try{
+            Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
+            if(blobs.size() > 0){
+                List<BlobKey> blobKey1 = blobs.get("image1");
+                if(blobKey1.size() > 0){
+                    try{
+                        bean.addImage(blobKey1.get(0).getKeyString(), 1);
+                        pictureUploadSuccess = true;
+                    }catch (Exception ee){
+                        System.out.println("Error uploading new image 1");
+                    }
+                }
+                List<BlobKey> blobKey2 = blobs.get("image2");
+                if(blobKey2.size() > 0){
+                    try{
+                        bean.addImage(blobKey2.get(0).getKeyString(), 2);
+                        pictureUploadSuccess = true;
+                    }catch (Exception ee){
+                        System.out.println("Error uploading new image 2");
+                    }
+                }
+                List<BlobKey> blobKey3 = blobs.get("image3");
+                if(blobKey3.size() > 0){
+                    try{
+                        bean.addImage(blobKey3.get(0).getKeyString(), 3);
+                        pictureUploadSuccess = true;
+                    }catch (Exception ee){
+                        System.out.println("Error uploading new image 3");
+                    }
+                }
+                List<BlobKey> blobKey4 = blobs.get("image4");
+                if(blobKey4.size() > 0){
+                    try{
+                        bean.addImage(blobKey4.get(0).getKeyString(), 4);
+                        pictureUploadSuccess = true;
+                    }catch (Exception ee){
+                        System.out.println("Error uploading new image 4");
+                    }
+                }
+                List<BlobKey> blobKey5 = blobs.get("image5");
+                if(blobKey5.size() > 0){
+                    try{
+                        bean.addImage(blobKey5.get(0).getKeyString(), 5);
+                        pictureUploadSuccess = true;
+                    }catch (Exception ee){
+                        System.out.println("Error uploading new image 5");
+                    }
+                }
+            }
+        }catch (Exception ee){
+            System.out.println("Error in adding image : " +ee.getMessage());
+        }
 
+        return pictureUploadSuccess;
+    }
 
 }

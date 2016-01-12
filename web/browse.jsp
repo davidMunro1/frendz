@@ -16,7 +16,9 @@
     <title></title>
 
     <%
-        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+        UserBeanBean bean = new UserBeanBean();
+        bean.setUSER_ID(26);
+        //UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
         ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
     %>
 
@@ -31,7 +33,7 @@
             firstName: "<%= users.get(i).getFirstName() %>",
             age: <%= users.get(i).getAge() %>,
             programme: "<%= users.get(i).getProgramme() %>",
-            picture: "<%= users.get(i).getPictureString() %>"
+            picture: "<%= bean.getServingURL("AMIfv95bx3e1Yl7nesjvVmchtU36Kn5g85YJnO0cTtCUI6oPSNnjOlxQofX6r3g5XLakJK1UVghTgudXUTJFZKkPQF-GQE8gywj9HYkl0AXreM8iHjYaUFTaQFdYblu-LhQ9ztumUYHclK4mywbd0k7RnA6ov-WJViO3695MwmJ8_seBeec90Agl7IIZeKAl2gyY2qgi2KpZyA6Qqy4TAW5AxwFAhl0tUKQ-sGZRvoNrhNBZ73ZkH8ysMcFgD1SJlvniVJFp1b2qF2iK5mStG1zOFCjX6dLrCslo8wLVlLt4Mp68eILzpDD3MM859jv6jRjLRukannO6SM1i4QcQcrfnwF-wxruHODWw4SmU7TFypsDmM7Iwqt5gXCvjkKPtecoXaRVhkjWY") %>"
         };
         usersArray[<%= i %>] = user;
         <%}%>

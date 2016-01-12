@@ -18,10 +18,10 @@
       <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
       <element id="directory" name="lib">
         <element id="library" level="project" name="Java EE 6-Java EE 6" />
-        <element id="library" level="project" name="mysql-connector-java-5.1.36" />
         <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
         <element id="library" level="project" name="activation-1.1" />
         <element id="library" level="project" name="javax.mail-api-1.5.1" />
+        <element id="library" level="project" name="mysql-connector-java-5.1.38-bin" />
       </element>
     </root>
   </artifact>
