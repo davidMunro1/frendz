@@ -17,7 +17,8 @@ public class MailSender {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
 
-        String msgBody = "http://www.frendz-1149.appspot.com/confirmAccount.jsp?email=" + receiver + "&token=" + token;
+        String msgBody = "Please click on the link and confirm your account " +
+                "http://www.frendz-1149.appspot.com/confirmAccount.jsp?email=" + receiver + "&token=" + token;
 
         try {
             Message msg = new MimeMessage(session);

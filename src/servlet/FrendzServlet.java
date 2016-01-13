@@ -35,7 +35,8 @@ public class FrendzServlet extends HttpServlet {
     private Byte TRUE = 1;
     private Byte FALSE = 0;
 
-    private String ERROR_SIGN_UP = "Invalid email or password, please try again";
+    private String ERROR_LOGIN = "Invalid email or password, please try again";
+    private String ERROR_SIGN_UP = "Sign up failed";
 
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
 
@@ -46,7 +47,7 @@ public class FrendzServlet extends HttpServlet {
             handleLogin(request,response);
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
-            //handleSignUp(request, response);
+            handleSignUp(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Confirm")){
             System.out.println("confirm account");
             handleConfirmation(request, response);
@@ -83,7 +84,7 @@ public class FrendzServlet extends HttpServlet {
         }
         else if(!correctUser){
             try {
-                response.sendRedirect("index.jsp?error="+ERROR_SIGN_UP);
+                response.sendRedirect("index.jsp?error="+ERROR_LOGIN);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -112,8 +113,11 @@ public class FrendzServlet extends HttpServlet {
             }
         }
         else if(!signUp){
-            //TODO: Decide what happens if sign up failed
-            System.out.println("sign up failed");
+            try {
+                response.sendRedirect("signup.html?error="+ERROR_SIGN_UP);
+            }catch (IOException ee){
+                System.out.println("error directing to signup page");
+            }
         }
     }
 

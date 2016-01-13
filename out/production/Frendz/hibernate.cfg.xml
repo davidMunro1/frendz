@@ -4,17 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://173.194.252.254:3306/FrendzDB</property>
-    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="connection.username">david</property>
-    <property name="connection.password">david</property>
+    <property name="connection.url">jdbc:google:rdbms://frendz-1149:f8994/FrendzDB</property>
+    <property name="connection.driver_class">com.google.appengine.api.rdbms.AppEngineDriver</property>
+
+    <property name="connection.username">root</property>
+    <property name="connection.pool_size">10</property>
+
     <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hbm2ddl.auto">update</property>
     <mapping class="hibernate.UserEntity"/>
     <mapping class="hibernate.UserProfileEntity"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>
+
 
 
 
