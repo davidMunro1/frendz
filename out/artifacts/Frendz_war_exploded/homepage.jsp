@@ -19,7 +19,8 @@
         UserBeanBean bean = new UserBeanBean();
         bean.setUSER_ID(26);
         ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
-
+        String name = "name";
+//        String school = get 'my' school
     %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -32,7 +33,7 @@
         <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>
-
+    <%--show school name--%>
     <div id="school_title" class="title">Högskolan Kristianstad</div>
     <a href="browse.jsp"><div id="browse_button">Browse</div></a>
     <div id="popular_container">

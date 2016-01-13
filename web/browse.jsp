@@ -35,7 +35,7 @@
             age: <%= users.get(i).getAge() %>,
             programme: "<%= users.get(i).getProgramme() %>",
             bio: "<%= users.get(i).getBio() %>",
-            <%--picture: "<%= bean.getServingURL(users.get(i).getPictureString()) %>"--%>
+            picture: "<%= bean.getServingURL(users.get(i).getPictureString()) %>"
         };
         usersArray[<%= i %>] = user;
         <%}%>

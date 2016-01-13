@@ -35,13 +35,15 @@ public class FrendzServlet extends HttpServlet {
     private Byte TRUE = 1;
     private Byte FALSE = 0;
 
+    private String ERROR_LOGIN = "Invalid email or password, please try again";
+    private String ERROR_SIGN_UP = "Sign up failed";
+
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         bean = (UserBeanBean)request.getSession().getAttribute("bean");
 
         if(request.getParameter("button").equalsIgnoreCase("login")) {
-            System.out.println("login");
             handleLogin(request,response);
         } else if(request.getParameter("button").equalsIgnoreCase("Sign up")){
             System.out.println("signup");
@@ -81,9 +83,11 @@ public class FrendzServlet extends HttpServlet {
             }
         }
         else if(!correctUser){
-            System.out.println("user does not exist or account not confirmed!");
-            //TODO: Need to send error message back to user, user doesnt exist or wrong combination.
-
+            try {
+                response.sendRedirect("index.jsp?error="+ERROR_LOGIN);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -97,10 +101,9 @@ public class FrendzServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         boolean signUp = bean.handleSignUp(request.getParameter("firstName"), request.getParameter("lastName"),
-               email, request.getParameter("university"), authToken);
+                email, request.getParameter("university"), authToken);
 
         if(signUp){
-            //TODO: Check mail was sent?
             MailSender mailSender = new MailSender();
             mailSender.sendMessage(email, authToken);
             try {
@@ -110,8 +113,11 @@ public class FrendzServlet extends HttpServlet {
             }
         }
         else if(!signUp){
-            //TODO: Decide what happens if sign up failed
-            System.out.println("sign up failed");
+            try {
+                response.sendRedirect("signup.html?error="+ERROR_SIGN_UP);
+            }catch (IOException ee){
+                System.out.println("error directing to signup page");
+            }
         }
     }
 
