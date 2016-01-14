@@ -22,10 +22,10 @@ public class MailSender {
 
         try {
             Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("frendz-1149@appspot.gserviceaccount.com", "Example.com Admin"));
+            msg.setFrom(new InternetAddress("frendz-1149@appspot.gserviceaccount.com", "Team frendz"));
             msg.addRecipient(Message.RecipientType.TO,
                     new InternetAddress(receiver, "Dear User"));
-            msg.setSubject("Your frendz.com needs to be verified");
+            msg.setSubject("Your frendz.com account needs to be verified");
             msg.setText(msgBody);
             Transport.send(msg);
 

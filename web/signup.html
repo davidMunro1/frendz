@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="signup_page">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -8,121 +8,6 @@
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/richwidgets-demo.min.js"></script>
     <script>
-        $(document).ready(function(){
-            var error = getParameterByName("error");
-            if(error.length > 0){
-                $("#schoolError").text(error);
-            }
-        });
-        function getParameterByName(name) {
-            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-        }
-        var schools = [
-            "Chalmers tekniska högskola",
-            "Göteborgs universitet",
-            "Handelshögskolan i Stockholm",
-            "Karlstads universitet",
-            "Karolinska Institutet",
-            "Kungliga Tekniska högskolan",
-            "Linköpings universitet",
-            "Linnéuniversitetet",
-            "Luleå tekniska universitet",
-            "Lunds universitet",
-            "Mittuniversitetet",
-            "Stockholms universitet",
-            "Sveriges lantbruksuniversitet",
-            "Umeå universitet",
-            "Uppsala universitet",
-            "Örebro universitet",
-            "Beckmans Designhögskola",
-            "Blekinge tekniska högskola",
-            "Dans och Cirkushögskolan",
-            "Ericastiftelsen",
-            "Ersta Sköndal högskola",
-            "Försvarshögskolan",
-            "Gymnastik- och idrottshögskolan",
-            "Högskolan Dalarna",
-            "Högskolan i Borås",
-            "Högskolan i Gävle",
-            "Högskolan i Halmstad",
-            "Högskolan i Skövde",
-            "Högskolan Kristianstad",
-            "Högskolan Väst",
-            "Johannelunds teologiska högskola",
-            "Jönköping University",
-            "Konstfack",
-            "Kungl. Konsthögskolan",
-            "Kungliga Musikhögskolan i Stockholm",
-            "Lunds tekniska högskola",
-            "Malmö högskola",
-            "Mälardalens högskola",
-            "Operahögskolan",
-            "Röda Korsets högskola",
-            "Sophiahemmet Högskola",
-            "Stockholms dramatiska högskola",
-            "Stockholms musikpedagogiska institut",
-            "Södertörns högskola",
-            "Teologiska högskolan Stockholm",
-            "Örebro missionsskola"
-        ];
-        function validateInput(){
-            var email = document.getElementById("email").value;
-            var school = document.getElementById("schools").value;
-            if(document.getElementById("firstName").value === ""){
-                document.getElementById("firstNameError").innerHTML = 'This field can not be empty';
-                return false;
-            }
-            else{
-                document.getElementById("firstNameError").innerHTML = '';
-            }
-            if(document.getElementById("secondName").value === ""){
-                document.getElementById("secondNameError").innerHTML = 'This field can not be empty';
-                return false;
-            }
-            else{
-                document.getElementById("secondNameError").innerHTML = '';
-            }
-            if(document.getElementById("email").value === ""){
-                document.getElementById("emailError").innerHTML = 'This field can not be empty';
-                return false;
-            }
-            else{
-                document.getElementById("emailError").innerHTML = '';
-            }
-            if(validateEmail(email) == false){
-                document.getElementById("emailError").innerHTML = 'This is not a valid email';
-                return false;
-            }
-            if(validateSchool(school) == -1){
-                document.getElementById("schoolError").innerHTML = 'The selection of school is not a valid';
-                return false;
-            }
-            else{
-                document.getElementById("schoolError").innerHTML = '';
-            }
-//            $.ajax({
-//                type: 'POST',
-//                url: 'emailAuth.php',
-//                data: 'testAjax=hello',
-//                dataType: 'text',
-//                success: function(testAjax) {
-//                    console.log("Result : " +testAjax);
-//                    window.alert("Great succ");
-//                },
-//                fail: function(){
-//                    window.alert("Error!");
-//                }
-//            });
-        }
-        function validateEmail(email){
-            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email);
-        }
-        function validateSchool(school){
-            var str = school.substring(0,1).toUpperCase() + school.substring(1, school.length);
-            return $.inArray(str, schools);
-        }
         $(function() {
             var schools = [
                 "Chalmers tekniska högskola",
@@ -172,26 +57,150 @@
                 "Teologiska högskolan Stockholm",
                 "Örebro missionsskola"
             ];
+
             $( "#schools" ).autocomplete({ source: schools, autoFocus: true, autoFill: true });
         });
+    </script>
+    <script>
+        $(document).ready(function(){
+            var error = getParameterByName("error");
+            if(error.length > 0){
+                $("#schoolError").text(error);
+            }
+        });
+
+        function getParameterByName(name) {
+            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
     </script>
 
 </head>
 <body id="bgr" class="center">
 
-<div class="container">
-    <div class="form">
-        <img id="logo" src="images/logo.png">
-        <form action="/FrendzServlet" method="post" id="signUp" name="signUp" onsubmit="return validateInput();">
-            <input id="firstName" name="firstName" placeholder="First name" type="text"><span id="firstNameError"></span><br>
-            <input id="secondName" name="lastName" placeholder="Last name" type="text"><span id="secondNameError"></span><br>
-            <input id="email" name="email" placeholder="E-mail" type="text"><span id="emailError"></span><br>
-            <input id="schools" class="form-control" name="university" placeholder="University" type="text"><span id="schoolError"></span><br>
-            <input id="button" type="submit" name="button" value="Sign up">
-        </form>
+    <div class="container">
+        <div class="form">
+            <img id="logo" src="images/logo.png">
+            <form action="/FrendzServlet" method="post" id="signUp" name="signUp" onsubmit="return validateInput();">
+                <input id="firstName" name="firstName" placeholder="First name" type="text"><span id="firstNameError"></span><br>
+                <input id="secondName" name="lastName" placeholder="Last name" type="text"><span id="secondNameError"></span><br>
+                <input id="email" name="email" placeholder="E-mail" type="text"><span id="emailError"></span><br>
+                <input id="schools" class="form-control" name="university" placeholder="University" type="text"><span id="schoolError"></span><br>
+                <input id="button" type="submit" name="button" value="Sign up">
+            </form>
+        </div>
     </div>
-</div>
 
+    <script>
+        var schools = [
+            "Chalmers tekniska högskola",
+            "Göteborgs universitet",
+            "Handelshögskolan i Stockholm",
+            "Karlstads universitet",
+            "Karolinska Institutet",
+            "Kungliga Tekniska högskolan",
+            "Linköpings universitet",
+            "Linnéuniversitetet",
+            "Luleå tekniska universitet",
+            "Lunds universitet",
+            "Mittuniversitetet",
+            "Stockholms universitet",
+            "Sveriges lantbruksuniversitet",
+            "Umeå universitet",
+            "Uppsala universitet",
+            "Örebro universitet",
+            "Beckmans Designhögskola",
+            "Blekinge tekniska högskola",
+            "Dans och Cirkushögskolan",
+            "Ericastiftelsen",
+            "Ersta Sköndal högskola",
+            "Försvarshögskolan",
+            "Gymnastik- och idrottshögskolan",
+            "Högskolan Dalarna",
+            "Högskolan i Borås",
+            "Högskolan i Gävle",
+            "Högskolan i Halmstad",
+            "Högskolan i Skövde",
+            "Högskolan Kristianstad",
+            "Högskolan Väst",
+            "Johannelunds teologiska högskola",
+            "Jönköping University",
+            "Konstfack",
+            "Kungl. Konsthögskolan",
+            "Kungliga Musikhögskolan i Stockholm",
+            "Lunds tekniska högskola",
+            "Malmö högskola",
+            "Mälardalens högskola",
+            "Operahögskolan",
+            "Röda Korsets högskola",
+            "Sophiahemmet Högskola",
+            "Stockholms dramatiska högskola",
+            "Stockholms musikpedagogiska institut",
+            "Södertörns högskola",
+            "Teologiska högskolan Stockholm",
+            "Örebro missionsskola"
+        ];
 
+        function validateInput() {
+            var email = document.getElementById("email").value;
+            var school = document.getElementById("schools").value;
+            if (document.getElementById("firstName").value === "") {
+                document.getElementById("firstNameError").innerHTML = 'This field can not be empty';
+                return false;
+            }
+            else {
+                document.getElementById("firstNameError").innerHTML = '';
+            }
+            if (document.getElementById("secondName").value === "") {
+                document.getElementById("secondNameError").innerHTML = 'This field can not be empty';
+                return false;
+            }
+            else {
+                document.getElementById("secondNameError").innerHTML = '';
+            }
+            if (document.getElementById("email").value === "") {
+                document.getElementById("emailError").innerHTML = 'This field can not be empty';
+                return false;
+            }
+            else {
+                document.getElementById("emailError").innerHTML = '';
+            }
+            if (validateEmail(email) == false) {
+                document.getElementById("emailError").innerHTML = 'This is not a valid email';
+                return false;
+            }
+            if (validateSchool(school) == -1) {
+                document.getElementById("schoolError").innerHTML = 'The selection of school is not valid';
+                return false;
+            }
+            else {
+                document.getElementById("schoolError").innerHTML = '';
+            }
+            //            $.ajax({
+            //                type: 'POST',
+            //                url: 'emailAuth.php',
+            //                data: 'testAjax=hello',
+            //                dataType: 'text',
+            //                success: function(testAjax) {
+            //                    console.log("Result : " +testAjax);
+            //                    window.alert("Great succ");
+            //                },
+            //                fail: function(){
+            //                    window.alert("Error!");
+            //                }
+            //            });
+            //        }
+        }
+
+        function validateEmail(email){
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function validateSchool(school){
+            var str = school.substring(0,1).toUpperCase() + school.substring(1, school.length);
+            return $.inArray(str, schools);
+        }
+    </script>
 </body>
 </html>

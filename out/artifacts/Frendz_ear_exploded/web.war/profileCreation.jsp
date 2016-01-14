@@ -12,7 +12,7 @@
 <%
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
 %>
-<html>
+<html id="create_profile_page">
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>Create profile</title>
@@ -57,7 +57,7 @@
                     </div>
                     <div style="position:relative;">
                         <div id="image2" class="file">Select an image</div>
-                        <input type="file" name="image1" class="file_input" onchange="document.getElementById('image2').innerHTML = this.value;" />
+                        <input type="file" name="image2" class="file_input" onchange="document.getElementById('image2').innerHTML = this.value;" />
                     </div>
                 </div>
 

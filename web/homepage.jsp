@@ -17,8 +17,8 @@
     <%
         //        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
         UserBeanBean bean = new UserBeanBean();
-        bean.setUSER_ID(26);
-        ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
+        bean.setUSER_ID(39);
+        ArrayList<NextUser> users = (ArrayList)bean.getRandomUsers();
         String name = "name";
 //        String school = get 'my' school
     %>
@@ -35,23 +35,23 @@
     </nav>
     <%--show school name--%>
     <div id="school_title" class="title">Högskolan Kristianstad</div>
-    <a href="browse.jsp"><div id="browse_button">Browse</div></a>
+    <a href="browse.jsp"><div id="browse_button">Connect</div></a>
     <div id="popular_container">
         <div class="popular_user">
             <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(0).getPictureString()) %>">
-            src="<%= users.get(0).getFirstName() %>">
+            <%= users.get(0).getFirstName() %>
         </div>
         <div class="popular_user">
             <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(1).getPictureString()) %>">
-            src="<%= users.get(1).getFirstName() %>">
+            <%= users.get(1).getFirstName() %>
         </div>
         <div class="popular_user">
             <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(2).getPictureString()) %>">
-            src="<%= users.get(2).getFirstName() %>">
+            <%= users.get(2).getFirstName() %>
         </div>
         <div class="popular_user">
             <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(3).getPictureString()) %>">
-            src="<%= users.get(3).getFirstName() %>">
+            <%= users.get(3).getFirstName() %>
         </div>
     </div>
 

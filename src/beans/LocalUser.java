@@ -1,6 +1,7 @@
 package beans;
 
 import hibernate.NextUser;
+import hibernate.UserEntity;
 import hibernate.UserProfileEntity;
 
 import javax.ejb.CreateException;
@@ -25,6 +26,7 @@ public interface LocalUser{
     boolean handleEditProfile(String secondName, String password, String programme, String bio);
     UserProfileEntity getProfile();
     UserProfileEntity getUserProfile(int userID);
+    UserEntity getUser();
     boolean addImage(String blobKeyString, int imageNumber);
     String getImage();
     String getImage(int userID);

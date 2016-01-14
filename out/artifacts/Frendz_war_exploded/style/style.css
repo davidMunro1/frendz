@@ -52,11 +52,25 @@ input {
     color: #5a6b8c;
     font-family: 'caviar_dreamsregular', Fallback, sans-serif;
 }
+#signup_page input, #login_page input, #confirm_account_page input {
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #ffffff;
+    font-size: 28px;
+    color: #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
 input:focus {
     /*-webkit-box-shadow: 0px 0px 3px #bf3b53;*/
     /*-moz-box-shadow: 0px 0px 3px #bf3b53;*/
     /*box-shadow: 0px 0px 5px #bf3b53;*/
-    border-bottom: 1px solid #fe6581;
+    border-bottom: 1px solid #fe6581 !important;
 }
 textarea {
     width: 400px;
@@ -129,29 +143,30 @@ select:focus, textarea:focus {
     select {padding-right:18px}
 }
 #button {
-    width: 420px;
-    height: 80px;
+    width: 420px !important;
+    height: 80px !important;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    border: 2px solid #d1465f;
-    background-color: #bf3b53;
-    -webkit-box-shadow: 0px 0px 2px #bf3b53;
-    -moz-box-shadow: 0px 0px 2px #bf3b53;
-    box-shadow: 0px 0px 2px #bf3b53;
-    margin-top: 40px;
-    margin-bottom: 60px;
-    color: #ffffff;
+    border-bottom: 2px solid #d1465f !important;
+    border: 2px solid #d1465f !important;
+    background-color: #bf3b53 !important;
+    -webkit-box-shadow: 0px 0px 2px #bf3b53 !important;
+    -moz-box-shadow: 0px 0px 2px #bf3b53 !important;
+    box-shadow: 0px 0px 2px #bf3b53 !important;
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+    color: #ffffff !important;
     font-size: 28px;
     font-family: 'caviar_dreamsregular', Fallback, sans-serif;
-    transition-duration: 0.5s;
+    transition-duration: 0.5s !important;
     cursor: pointer;
 }
 #button:hover {
-    background-color: #d1465f;
-    -webkit-box-shadow: 0px 3px 6px #333;
-    -moz-box-shadow: 0px 3px 6px #333;
-    box-shadow: 0px 3px 6px #333;
+    background-color: #d1465f !important;
+    -webkit-box-shadow: 0px 3px 6px #333 !important;
+    -moz-box-shadow: 0px 3px 6px #333 !important;
+    box-shadow: 0px 3px 6px #333 !important;
     transition-duration: 0.5s;
 }
 #bgr {
@@ -409,6 +424,10 @@ h1 {
     margin-bottom: 20px;
     transition-duration: 0.3s;
 }
+.popular_user_picture img {
+    width: 200px;
+    transition-duration: 0.3s;
+}
 .popular_user_picture:hover {
     width: 210px;
     height: 210px;
@@ -418,10 +437,14 @@ h1 {
     margin-bottom: 15px;
     transition-duration: 0.3s;
 }
+.popular_user_picture img:hover {
+    width: 210px;
+    transition-duration: 0.3s;
+}
 .file {
     position: absolute;
     width: 376px;
-    left: 76px;
+    left: 98px;
     z-index: 0;
     height: 40px;
     margin-top: 10px;
@@ -454,6 +477,12 @@ h1 {
 }
 #edit_profile {
     left: 60%;
+}
+.edit_profile_picture {
+    position: relative;
+    top: -20px;
+    height: 60px;
+    float: left;
 }
 #logout {
     left: 70%;
