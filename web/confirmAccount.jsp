@@ -13,6 +13,17 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>Confirm account</title>
+
+    <script>
+        function checkPassword(){
+            var passwordOne = document.getElementsByName("password").value;
+            var passwordTwo = document.getElementsByName("confirmPassword").value;
+
+            if(passwordOne.localeCompare(passwordTwo) != 0){
+                return false;
+            }
+        }
+    </script>
 </head>
 <body id="bgr" class="center">
 
@@ -26,17 +37,14 @@
             if(verified)
                 out.println("<div class='info_message'>Congratulations! Your account has been verified!</div>");
             else {
-                out.println("<div class='info_message'>Your account could not be verified!</div>");
+                out.println("<div class='info_message'>Your account could not be verified! It has </div>");
                 response.setHeader("Refresh", "5;url=index.jsp");
             }
         %>
         <form action="/FrendzServlet" method="post">
             <input name="password" placeholder="Password" type="password"><br>
             <input name="confirmPassword" placeholder="Confirm password" type="password"><br>
-
-            <input name="email" value="<%=request.getParameter("email")%>" type="hidden">
-
-            <input id="button" type="submit" name="button" value="Confirm">
+            <input id="button" type="submit" name="button" value="Confirm" onsubmit="return checkPassword()">
         </form>
 
     </div>
