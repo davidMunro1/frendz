@@ -37,6 +37,7 @@ public class FrendzServlet extends HttpServlet {
 
     private String ERROR_LOGIN = "Invalid email or password, please try again";
     private String ERROR_SIGN_UP = "Sign up failed";
+    private String ERROR_EDIT_PROFILE = "Profile could not be updated, please try again";
 
     private BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
 
@@ -53,7 +54,10 @@ public class FrendzServlet extends HttpServlet {
             handleConfirmation(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
             System.out.println("create profile");
-            handleCreateProfile(request, response);
+            //handleCreateProfile(request, response);
+        } else if(request.getParameter("button").equalsIgnoreCase("save")){
+            System.out.println("edit profile");
+            //handleEditProfile(request, response);
         }
 
     }
@@ -174,6 +178,33 @@ public class FrendzServlet extends HttpServlet {
         }
         else if(!created || !uploadPic){
             System.out.println("failed in creation of profile");
+        }
+    }
+
+    private void handleEditProfile(HttpServletRequest request, HttpServletResponse response){
+        bean = (UserBeanBean)request.getSession().getAttribute("bean");
+
+        if(bean==null){
+            UserBeanBean bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
+        }
+
+        try{
+            boolean editSuccess = bean.handleEditProfile(request.getParameter("secondName"),
+                    request.getParameter("password"),
+                    request.getParameter("programme"),
+                    request.getParameter("bio"));
+
+            boolean newImageUpload = uploadNewImages(request);
+
+            if(editSuccess && newImageUpload){
+                response.sendRedirect("editProfile.jsp");
+            }
+            else{
+                response.sendRedirect("editProfile.jsp?error="+ERROR_EDIT_PROFILE);
+            }
+        }catch (Exception ee){
+            ee.printStackTrace();
         }
     }
 

@@ -146,11 +146,17 @@ public class UserBeanBean implements LocalUser, Serializable {
             }
             if (authToken != null) {
                 if (authToken.equals(retToken) && user != null) {
-                    session.beginTransaction();
-                    user.setConfirmed(TRUE);
-                    session.save(user);
-                    session.getTransaction().commit();
-                    confirmed = true;
+                    if(user.getConfirmed()==TRUE){
+                        //user has already confirmed account
+                        confirmed = false;
+                    }
+                    else{
+                        session.beginTransaction();
+                        user.setConfirmed(TRUE);
+                        session.save(user);
+                        session.getTransaction().commit();
+                        confirmed = true;
+                    }
                 } else if (!authToken.equals(retToken)) {
                     confirmed = false;
                 }
@@ -285,6 +291,9 @@ public class UserBeanBean implements LocalUser, Serializable {
      */
     @Override
     public UserProfileEntity getProfile() {
+        if(sessionFactory==null){
+            sessionFactory = FrendzHibernateUtil.getSessionFactory();
+        }
         Session session = sessionFactory.openSession();
         UserProfileEntity profile = null;
 
