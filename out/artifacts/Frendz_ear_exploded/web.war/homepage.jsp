@@ -15,11 +15,10 @@
     <title>Frendz</title>
 
     <%
-        //        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
-        UserBeanBean bean = new UserBeanBean();
-        bean.setUSER_ID(39);
+                UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+//        UserBeanBean bean = new UserBeanBean();
+//        bean.setUSER_ID(39);
         ArrayList<NextUser> users = (ArrayList)bean.getRandomUsers();
-        String name = "name";
 //        String school = get 'my' school
     %>
 
@@ -30,7 +29,10 @@
 
     <nav>
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
-        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <a href="editProfile.jsp">
+            <img style="height: 40px; float: right;" src="<%=bean.getServingURL(bean.getProfile().getImage1())%>">
+            <div id="edit_profile" class="menu_item"><%=bean.getUser().getFirstName()%></div>
+        </a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>
     <%--show school name--%>
@@ -38,19 +40,27 @@
     <a href="browse.jsp"><div id="browse_button">Connect</div></a>
     <div id="popular_container">
         <div class="popular_user">
-            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(0).getPictureString()) %>">
+            <div class="popular_user_picture">
+            <img src="<%= bean.getServingURL(users.get(0).getPictureString()) %>">
+            </div>
             <%= users.get(0).getFirstName() %>
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(1).getPictureString()) %>">
+            <div class="popular_user_picture">
+            <img src="<%= bean.getServingURL(users.get(1).getPictureString()) %>">
+            </div>
             <%= users.get(1).getFirstName() %>
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(2).getPictureString()) %>">
+            <div class="popular_user_picture">
+            <img src="<%= bean.getServingURL(users.get(2).getPictureString()) %>">
+            </div>
             <%= users.get(2).getFirstName() %>
         </div>
         <div class="popular_user">
-            <img class="popular_user_picture" src="<%= bean.getServingURL(users.get(3).getPictureString()) %>">
+            <div class="popular_user_picture">
+            <img src="<%= bean.getServingURL(users.get(3).getPictureString()) %>">
+            </div>
             <%= users.get(3).getFirstName() %>
         </div>
     </div>

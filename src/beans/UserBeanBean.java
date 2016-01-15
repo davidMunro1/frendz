@@ -247,12 +247,12 @@ public class UserBeanBean implements LocalUser, Serializable {
     @Override
     public boolean handleEditProfile(String secondName, String password, String programme, String bio){
         boolean success = false;
-        if(sessionFactory==null){
+        if(sessionFactory == null){
             sessionFactory = FrendzHibernateUtil.getSessionFactory();
         }
         Session session = sessionFactory.openSession();
         Transaction tx = null;
-        String hashPass = HashHelper.createHash(password);
+
 
         try{
             tx = session.beginTransaction();
@@ -262,6 +262,7 @@ public class UserBeanBean implements LocalUser, Serializable {
                 user.setSecondName(secondName);
             }
             if(!password.isEmpty()){
+                String hashPass = HashHelper.createHash(password);
                 user.setPassword(hashPass);
             }
             if(!programme.isEmpty()){
@@ -270,9 +271,9 @@ public class UserBeanBean implements LocalUser, Serializable {
             if(!bio.isEmpty()){
                 userProfile.setBio(bio);
             }
-            session.save(user);
-            session.save(userProfile);
-            session.getTransaction().commit();
+            session.update(user);
+            session.update(userProfile);
+            tx.commit();
             success = true;
 
         } catch (HibernateException ee){

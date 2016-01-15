@@ -481,8 +481,16 @@ h1 {
 .edit_profile_picture {
     position: relative;
     top: -20px;
+    width: 60px;
     height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
     float: left;
+    overflow: hidden;
+}
+.edit_profile_picture img {
+    height: 60px;
 }
 #logout {
     left: 70%;

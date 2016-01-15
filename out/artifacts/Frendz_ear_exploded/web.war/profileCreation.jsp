@@ -16,6 +16,28 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>Create profile</title>
+
+    <script>
+        function validateSelect(){
+            var genderSelection = document.getElementById("gender");
+            var selection = genderSelection.options[genderSelection.selectedIndex].text;
+            var soughtGenderSelection = document.getElementById("soughtGender");
+            var selection1 = soughtGenderSelection.options[soughtGenderSelection.selectedIndex].text;
+
+            if ($.inArray(selection, ['Male', 'Female']) == -1) {
+            $('#error_message').text('Gender must be chosen');
+            return false;
+            }
+            else if($.inArray(selection1, ['Men', 'Women', 'Both']) == -1){
+            $('#error_message').text('Sought gender must be chosen');
+            return false;
+            }
+            else{
+            return true;
+            }
+        }
+    </script>
+
 </head>
 <body id="bgr" class="center">
 
@@ -30,7 +52,7 @@
     <div class="container">
         <div class="form">
             <%--<img id="logo" src="images/logo.png">--%>
-            <form action="<%= blobstoreService.createUploadUrl("/FrendzServlet", UploadOptions.Builder.withGoogleStorageBucketName("images_frendz/user_images")) %>" method="post" enctype="multipart/form-data">
+            <form action="<%= blobstoreService.createUploadUrl("/FrendzServlet", UploadOptions.Builder.withGoogleStorageBucketName("images_frendz/user_images")) %>" method="post" enctype="multipart/form-data" onsubmit="return validateSelect()">
                 <div style="position: relative; left: 0px; width: 50%; margin-top: 80px; margin-bottom: 40px; z-index: 99;">
                     <input name="age" placeholder="Age" type="text"><br>
                     <select name="gender">

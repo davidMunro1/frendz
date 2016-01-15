@@ -54,10 +54,10 @@ public class FrendzServlet extends HttpServlet {
             handleConfirmation(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("Create profile")){
             System.out.println("create profile");
-            //handleCreateProfile(request, response);
+            handleCreateProfile(request, response);
         } else if(request.getParameter("button").equalsIgnoreCase("save")){
             System.out.println("edit profile");
-            //handleEditProfile(request, response);
+            handleEditProfile(request, response);
         }
 
     }
@@ -239,7 +239,8 @@ public class FrendzServlet extends HttpServlet {
             Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
             if(blobs.size() > 0){
                 List<BlobKey> blobKey1 = blobs.get("image1");
-                if(blobKey1.size() > 0){
+                System.out.println(request.getParameter("image1controller") + " size: " + blobKey1.size());
+                if(!blobKey1.isEmpty() && request.getParameter("image1controller") != null && !request.getParameter("image1controller").isEmpty()){
                     try{
                         bean.addImage(blobKey1.get(0).getKeyString(), 1);
                         pictureUploadSuccess = true;
@@ -248,7 +249,7 @@ public class FrendzServlet extends HttpServlet {
                     }
                 }
                 List<BlobKey> blobKey2 = blobs.get("image2");
-                if(blobKey2.size() > 0){
+                if(!blobKey2.isEmpty() && request.getParameter("image2controller") != null && !request.getParameter("image2controller").isEmpty()){
                     try{
                         bean.addImage(blobKey2.get(0).getKeyString(), 2);
                         pictureUploadSuccess = true;
@@ -257,7 +258,7 @@ public class FrendzServlet extends HttpServlet {
                     }
                 }
                 List<BlobKey> blobKey3 = blobs.get("image3");
-                if(blobKey3.size() > 0){
+                if(!blobKey3.isEmpty() && request.getParameter("image3controller") != null && !request.getParameter("image3controller").isEmpty()){
                     try{
                         bean.addImage(blobKey3.get(0).getKeyString(), 3);
                         pictureUploadSuccess = true;
@@ -266,7 +267,7 @@ public class FrendzServlet extends HttpServlet {
                     }
                 }
                 List<BlobKey> blobKey4 = blobs.get("image4");
-                if(blobKey4.size() > 0){
+                if(!blobKey4.isEmpty() && request.getParameter("image4controller") != null && !request.getParameter("image4controller").isEmpty()){
                     try{
                         bean.addImage(blobKey4.get(0).getKeyString(), 4);
                         pictureUploadSuccess = true;
@@ -275,7 +276,7 @@ public class FrendzServlet extends HttpServlet {
                     }
                 }
                 List<BlobKey> blobKey5 = blobs.get("image5");
-                if(blobKey5.size() > 0){
+                if(!blobKey5.isEmpty() && request.getParameter("image5controller") != null && !request.getParameter("image5controller").isEmpty()){
                     try{
                         bean.addImage(blobKey5.get(0).getKeyString(), 5);
                         pictureUploadSuccess = true;
@@ -284,6 +285,8 @@ public class FrendzServlet extends HttpServlet {
                     }
                 }
             }
+            if(blobs.size() == 0)
+                pictureUploadSuccess = true;
         }catch (Exception ee){
             System.out.println("Error in adding image : " +ee.getMessage());
         }

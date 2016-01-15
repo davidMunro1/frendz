@@ -16,9 +16,9 @@
     <title></title>
 
     <%
-//        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
-        UserBeanBean bean = new UserBeanBean();
-        bean.setUSER_ID(39);
+        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+//        UserBeanBean bean = new UserBeanBean();
+//        bean.setUSER_ID(39);
         ArrayList<NextUser> users = (ArrayList)bean.browseAllUsers();
     %>
 
