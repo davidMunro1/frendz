@@ -1,6 +1,7 @@
 <%@ page import="com.google.appengine.api.blobstore.UploadOptions" %>
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreService" %>
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
+<%@ page import="beans.UserBeanBean" %>
 <%--
   Created by IntelliJ IDEA.
   User: davidmunro
@@ -16,6 +17,10 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <title>Create profile</title>
+
+    <%
+        UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
+    %>
 
     <script>
         function validateSelect(){
@@ -43,7 +48,12 @@
 
     <nav>
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
-        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <a href="editProfile.jsp">
+            <div id="edit_profile" class="menu_item">
+                <div class="small_profile_picture"><img src="<%=bean.getServingURL(bean.getProfile().getImage1())%>"></div>
+                <%=bean.getUser().getFirstName()%>
+            </div>
+        </a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>
 

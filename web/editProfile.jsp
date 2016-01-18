@@ -33,7 +33,12 @@
 
     <nav>
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
-        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <a href="editProfile.jsp">
+            <div id="edit_profile" class="menu_item">
+                <div class="small_profile_picture"><img src="<%=bean.getServingURL(bean.getProfile().getImage1())%>"></div>
+                <%=bean.getUser().getFirstName()%>
+            </div>
+        </a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>
 
@@ -45,7 +50,7 @@
         <form action="<%= blobstoreService.createUploadUrl("/FrendzServlet", UploadOptions.Builder.withGoogleStorageBucketName("images_frendz/user_images")) %>" method="post" enctype="multipart/form-data">
             <div style="position: relative; left: 0px; width: 50%; margin-top: 120px; margin-bottom: 80px; z-index: 99;">
                 <input id="second_name" name="secondName" placeholder="<%=user.getSecondName()%>" type="text"><br>
-                <input id="password" name="password" placeholder="Password" value="12345" type="password"><br>
+                <input id="password" name="password" placeholder="Password" type="password"><br>
                 <input id="programme_input" name="programme" placeholder="<%=profile.getProgramme()%>" type="password"><br>
                 <input id="bio_input" name="bio" placeholder="<%=profile.getBio()%>" type="text" maxlength="150"><br>
             </div>

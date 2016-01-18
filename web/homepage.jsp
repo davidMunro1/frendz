@@ -30,8 +30,10 @@
     <nav>
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
         <a href="editProfile.jsp">
-            <img style="height: 40px; float: right;" src="<%=bean.getServingURL(bean.getProfile().getImage1())%>">
-            <div id="edit_profile" class="menu_item"><%=bean.getUser().getFirstName()%></div>
+            <div id="edit_profile" class="menu_item">
+                <div class="small_profile_picture"><img src="<%=bean.getServingURL(bean.getProfile().getImage1())%>"></div>
+                <%=bean.getUser().getFirstName()%>
+            </div>
         </a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>

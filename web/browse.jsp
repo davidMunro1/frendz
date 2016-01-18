@@ -45,18 +45,20 @@
 
     <nav>
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
-        <a href="editProfile.jsp"><div id="edit_profile" class="menu_item">Juraj</div></a>
+        <a href="editProfile.jsp">
+            <div id="edit_profile" class="menu_item">
+                <div class="small_profile_picture"><img src="<%=bean.getServingURL(bean.getProfile().getImage1())%>"></div>
+                <%=bean.getUser().getFirstName()%>
+            </div>
+        </a>
         <div id="logout" class="menu_item">Logout</div>
     </nav>
 
     <div id="content_container">
         <div id="profile_picture">
-            <%--<% out.println("<img src=" + users.get(0).getPictureString() + ">"); %>--%>
             <img id="picture">
         </div>
-        <div id="bio">
-            This is my awesome bio. Everyone loves me because I'm a guy called Anna and I'm 78. Call me ;)
-        </div>
+        <div id="bio"></div>
         <div id="dislike" onclick="sendDislike();"></div>
         <div id="like" onclick="sendLike();"></div>
     </div>
@@ -89,7 +91,6 @@
         document.getElementById("age").innerHTML = usersArray[0].age;
         document.getElementById("programme").innerHTML = usersArray[0].programme;
         document.getElementById("bio").innerHTML = usersArray[0].bio;
-    //    document["picture"].src = usersArray[0].picture;
         document.getElementById("picture").src = usersArray[0].picture;
 
     </script>
