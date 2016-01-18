@@ -10,17 +10,17 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public class FrendzHibernateUtil {
 
-    private static final SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
     private static ServiceRegistry serviceRegistry;
 
-    static {
+    public static SessionFactory getSessionFactory() {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
             // config file.
             Configuration configuration = new Configuration();
-            configuration.configure();
+            configuration.configure("hibernate.cfg.xml");
             serviceRegistry = new ServiceRegistryBuilder().applySettings(
-                    configuration.getProperties()). buildServiceRegistry();
+                    configuration.getProperties()).buildServiceRegistry();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
         } catch (Throwable ex) {
@@ -28,9 +28,7 @@ public class FrendzHibernateUtil {
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }
-    }
 
-    public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 }

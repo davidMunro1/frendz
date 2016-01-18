@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+html {
+    /*background-color: #f5f5f5;*/
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+/*input {*/
+    /*width: 400px;*/
+    /*height: 60px;*/
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
+    /*padding: 10px;*/
+    /*text-align: center;*/
+    /*background-color: rgba(238, 238, 238, 0.2);*/
+    /*-webkit-border-radius: 12px;*/
+    /*-moz-border-radius: 12px;*/
+    /*border-radius: 12px;*/
+    /*border: 2px solid #f5f5f5;*/
+    /*-webkit-box-shadow: 0px 0px 2px #f5f5f5;*/
+    /*-moz-box-shadow: 0px 0px 2px #f5f5f5;*/
+    /*box-shadow: 0px 0px 2px #f5f5f5;*/
+    /*font-size: 28px;*/
+    /*color: #fff;*/
+    /*font-family: 'caviar_dreamsregular', Fallback, sans-serif;*/
+/*}*/
+input {
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #5a6b8c;
+    font-size: 28px;
+    color: #5a6b8c;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#signup_page input, #login_page input, #confirm_account_page input {
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #ffffff;
+    font-size: 28px;
+    color: #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+input:focus {
+    /*-webkit-box-shadow: 0px 0px 3px #bf3b53;*/
+    /*-moz-box-shadow: 0px 0px 3px #bf3b53;*/
+    /*box-shadow: 0px 0px 5px #bf3b53;*/
+    border-bottom: 1px solid #fe6581 !important;
+}
+textarea {
+    width: 400px;
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #5a6b8c;
+    font-size: 28px;
+    color: #5a6b8c;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+.ui-helper-hidden-accessible {
+    position: absolute;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+.ui-menu {
+    position: absolute;
+    visibility: hidden;
+}
+button {
+    width: 420px;
+    height: 80px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid #d1465f;
+    background-color: #bf3b53;
+    -webkit-box-shadow: 0px 0px 2px #bf3b53;
+    -moz-box-shadow: 0px 0px 2px #bf3b53;
+    box-shadow: 0px 0px 2px #bf3b53;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 28px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+/* The CSS */
+select {
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #5a6b8c;
+    font-size: 28px;
+    color: #5a6b8c;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+select:focus, textarea:focus {
+    border-bottom: 1px solid #fe6581;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+#button {
+    width: 420px !important;
+    height: 80px !important;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border-bottom: 2px solid #d1465f !important;
+    border: 2px solid #d1465f !important;
+    background-color: #bf3b53 !important;
+    -webkit-box-shadow: 0px 0px 2px #bf3b53 !important;
+    -moz-box-shadow: 0px 0px 2px #bf3b53 !important;
+    box-shadow: 0px 0px 2px #bf3b53 !important;
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+    color: #ffffff !important;
+    font-size: 28px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+    transition-duration: 0.5s !important;
+    cursor: pointer;
+}
+#button:hover {
+    background-color: #d1465f !important;
+    -webkit-box-shadow: 0px 3px 6px #333 !important;
+    -moz-box-shadow: 0px 3px 6px #333 !important;
+    box-shadow: 0px 3px 6px #333 !important;
+    transition-duration: 0.5s;
+}
+#bgr {
+    background-image: url('../images/bgr.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.bgr {
+    background-image: url('../images/bgr.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+#logo {
+    width: 350px;
+    height: 100px;
+    padding-bottom: 35px;
+}
+#mini_logo {
+    height: 40px;
+    margin-top: 6px;
+}
+.container {
+    width: 75%;
+    min-width: 1000px;
+    /*min-height: 700px;*/
+    margin-left: 12.5%;
+    padding-top: 100px;
+    /*padding-bottom: 100px;*/
+    position: relative;
+    color: #ffffff;
+}
+/*.half_container {*/
+    /*width: 37.5%;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+/*.left_container {*/
+    /*margin-left: 12.5%;*/
+/*}*/
+/*.right_container {*/
+    /*margin-right: 12.5%;*/
+/*}*/
+.form {
+    margin-bottom: -200px;
+}
+.center {
+    text-align: center;
+}
+.center-vertical {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.info_message {
+    color: #ffffff;
+    font-size: 24px;
+    padding-bottom: 32px;
+}
+#content_container {
+    width: 900px;
+    height: 600px;
+    top: 120px;
+    position: relative;
+    left: calc(50% - 400px);
+    background-color: rgba(255,255,255, 0.9);
+    -webkit-box-shadow: 0px 2px 8px #444;
+    -moz-box-shadow: 0px 2px 8px #444;
+    box-shadow: 0px 2px 8px #444;
+    border-radius: 25px;
+}
+#info_container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    left: calc(50% - 500px);
+    margin-top: -270px;
+    background-color: #5a6b8c;
+    -webkit-box-shadow: 0px 2px 8px #444;
+    -moz-box-shadow: 0px 2px 8px #444;
+    box-shadow: 0px 2px 8px #444;
+}
+nav {
+    width: 100%;
+    min-width: 1000px;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 2px solid #f0f0f0;
+    -webkit-box-shadow: 0px 0px 1px #c0c0c0;
+    -moz-box-shadow: 0px 0px 1px #c0c0c0;
+    box-shadow: 0px 0px 1px #c0c0c0;
+    z-index: 99;
+}
+#profile_picture {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    margin-top: 40px;
+    margin-right: 150px;
+}
+#profile_picture img {
+    width: 300px;
+}
+#like {
+    width: 120px;
+    height: 120px;
+    background-image: url("../images/tick.png");
+    position: relative;
+    left: 650px;
+    top: 435px;
+}
+#like:hover {
+    width: 130px;
+    height: 130px;
+    background-size: 130px 130px;
+    left: 645px;
+    top: 430px;
+}
+#dislike {
+    width: 120px;
+    height: 120px;
+    background-image: url("../images/cross.png");
+    position: absolute;
+    left: 430px;
+    top: 435px;
+}
+#dislike:hover {
+    width: 130px;
+    height: 130px;
+    background-size: 130px 130px;
+    left: 425px;
+    top: 430px;
+}
+#name {
+    width: 80%;
+    padding-top: 48px;
+    padding-bottom: 12px;
+    margin-left: 10%;
+    color: #ffffff;
+    font-size: 32px;
+    border-bottom: 1px dotted #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#programme {
+    width: 80%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    margin-left: 10%;
+    color: #ffffff;
+    font-size: 24px;
+    border-bottom: 1px dotted #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#age {
+    width: 80%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    margin-left: 10%;
+    color: #ffffff;
+    font-size: 24px;
+    border-bottom: 1px dotted #ffffff;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#bio {
+    width: 450px;
+    height: 64px;
+    position: absolute;
+    top: 355px;
+    left: 370px;
+    text-align: center;
+    color: #616161;
+    font-size: 18px;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+#bio_input {
+    font-size: 20px;
+}
+h1 {
+    font-size: 24px;
+}
+#hkr {
+    background: url('../images/hkr.jpg') no-repeat;
+    background-size: 100%;
+}
+#school_title {
+    font-size: 72px;
+    color: #ffffff;
+    font-family: 'Poiret One', cursive;
+}
+.title {
+    padding-top: 220px;
+}
+#browse_button {
+    width: 360px;
+    height: 100px;
+    position: relative;
+    left: calc(50% - 180px);
+    margin-top: 110px;
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 90px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 8px;
+    background-color:#bf3b53;
+    /*-webkit-box-shadow: inset hoff voff blur color;*/
+    /*-moz-box-shadow: inset hoff voff blur color;*/
+    box-shadow: 0px 2px 10px #777;
+    transition-duration: 0.5s;
+}
+#browse_button:hover {
+    background-color:#d1465f;
+    box-shadow: 0px 5px 20px #777;
+    transition-duration: 0.5s;
+}
+#popular_title {
+    width: 75%;
+    position: relative;
+    left: 12.5%;
+    padding-top: 36px;
+    padding-bottom: 12px;
+    font-size: 36px;
+    color: #616161;
+    border-bottom: 1px solid #616161;
+}
+#popular_container {
+    width: 960px;
+    height: 320px;
+    position: relative;
+    left: calc(50% - 480px);
+    clear: both;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.popular_user {
+    float: left;
+    width: 200px;
+    height: 240px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #616161;
+    font-size: 20px;
+}
+.popular_user_picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+.popular_user_picture img {
+    width: 200px;
+    transition-duration: 0.3s;
+}
+.popular_user_picture:hover {
+    width: 210px;
+    height: 210px;
+    border-radius: 105px;
+    margin-top: -5px;
+    margin-left: -5px;
+    margin-bottom: 15px;
+    transition-duration: 0.3s;
+}
+.popular_user_picture img:hover {
+    width: 210px;
+    transition-duration: 0.3s;
+}
+.file {
+    position: absolute;
+    width: 376px;
+    left: 98px;
+    z-index: 0;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+    border-bottom: 1px dotted #5a6b8c;
+    font-size: 20px;
+    color: #7d8ba8;
+    font-family: 'caviar_dreamsregular', Fallback, sans-serif;
+}
+.file_input {
+    z-index: 1;
+    opacity: 0;
+    position: relative;
+    left: 0px;
+}
+.menu_item {
+    position: absolute;
+    top:0px;
+    height: 30px;
+    color: #616161;
+    font-size: 20px;
+    margin: 14px 32px 0px 32px;
+}
+.menu_item:hover {
+    border-bottom: 1px solid #616161;
+}
+#edit_profile {
+    left: 60%;
+}
+.edit_profile_picture {
+    position: relative;
+    top: -20px;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    float: left;
+    overflow: hidden;
+}
+.edit_profile_picture img {
+    height: 60px;
+}
+#logout {
+    left: 70%;
+}
+.error_message {
+    font-size: 24px;
+    color: #d1465f;
+    font-weight: 900;
+    text-shadow: 0px 1px 1px #333;
+}
+.small_profile_picture {
+    height: 40px;
+    width: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: -8px;
+    left: -48px;
+    overflow: hidden;
+}
+.small_profile_picture img {
+    width: 40px;
+}
+
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('../fonts/CaviarDreams-webfont.eot');
+    src: url('../fonts/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CaviarDreams-webfont.woff') format('woff'),
+    url('../fonts/CaviarDreams-webfont.ttf') format('truetype'),
+    url('../fonts/CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

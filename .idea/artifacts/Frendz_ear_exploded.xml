@@ -8,7 +8,6 @@
       </element>
       <element id="directory" name="ejb.jar">
         <element id="artifact" artifact-name="Frendz:ejb exploded" />
-        <element id="library" level="project" name="AppEngine API" />
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         </element>
@@ -19,9 +18,15 @@
       <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
       <element id="directory" name="lib">
         <element id="library" level="project" name="Java EE 6-Java EE 6" />
-        <element id="library" level="project" name="mysql-connector-java-5.1.36" />
-        <element id="library" level="project" name="hibernate-3.5.3" />
+        <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+        <element id="library" level="project" name="activation-1.1" />
+        <element id="library" level="project" name="javax.mail-api-1.5.1" />
+        <element id="library" level="project" name="mysql-connector-java-5.1.38-bin" />
+        <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/junit.jar" />
+        <element id="library" level="project" name="appengine-java-sdk-1.91" />
+        <element id="library" level="project" name="javax.activation:activation:1.1" />
       </element>
+      <element id="library" level="project" name="appengine-java-sdk-1.91" />
     </root>
   </artifact>
 </component>

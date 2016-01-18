@@ -8,10 +8,12 @@
           <element id="module-output" name="Frendz" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="AppEngine API" />
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
-          <element id="library" level="project" name="mysql-connector-java-5.1.36" />
           <element id="library" level="project" name="javax.ejb" />
+          <element id="library" level="project" name="com.google.appengine.tools:appengine-gcs-client:0.5" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+          <element id="javaee-facet-resources" facet="Frendz/ejb/EJB" />
         </element>
       </element>
     </root>

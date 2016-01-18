@@ -5,7 +5,6 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="966da56c-0f2e-4254-ae02-49fdce417982" />
-          <unit-entry name="hibernate:hibernate.cfg.xml" value="966da56c-0f2e-4254-ae02-49fdce417982" />
         </datasource-map>
         <naming-strategy-map>
           <unit-entry name="hibernate.cfg.xml" />
@@ -31,11 +30,12 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$USER_HOME$/Documents/appengine-java-sdk-1.9.30</sdk-home-path>
+        <sdk-home-path>$USER_HOME$/Desktop/appengine-java-sdk-1.9.30</sdk-home-path>
       </configuration>
     </facet>
     <facet type="javaeeApplication" name="javaEEApplication">
@@ -61,7 +61,20 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="javax.ejb" level="project" />
     <orderEntry type="library" name="org.glassfish:javax.ejb:3.0-b29" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.36" level="project" />
-    <orderEntry type="library" name="hibernate-3.5.3" level="project" />
+    <orderEntry type="library" name="com.google.appengine.tools:appengine-gcs-client:0.5" level="project" />
+    <orderEntry type="library" name="javax.mail-api-1.5.1" level="project" />
+    <orderEntry type="library" name="activation-1.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-5.1.38-bin" level="project" />
+    <orderEntry type="library" name="appengine-java-sdk-1.91" level="project" />
+    <orderEntry type="library" name="javax.activation:activation:1.1" level="project" />
   </component>
 </module>

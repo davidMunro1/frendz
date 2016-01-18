@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javax.ejb">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/javax.ejb.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -18,6 +18,7 @@ public class UserEntity {
     private String authorisationToken;
 
     @Id
+    @GeneratedValue
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;
@@ -48,7 +49,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "password", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "password", nullable = true, insertable = true, updatable = true, length = 45)
     public String getPassword() {
         return password;
     }
