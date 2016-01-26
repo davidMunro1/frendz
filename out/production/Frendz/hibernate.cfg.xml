@@ -11,6 +11,7 @@
     <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
     <!--<mapping class="hibernate.UserEntity"/>-->
     <!--<mapping class="hibernate.UserProfileEntity"/>-->
+    <!--<mapping class="hibernate.RelationshipsEntity"/>-->
     <!--&lt;!&ndash; DB schema will be updated if needed &ndash;&gt;-->
     <!--&lt;!&ndash; <property name="hbm2ddl.auto">update</property> &ndash;&gt;-->
   <!--</session-factory>-->
@@ -27,6 +28,7 @@
     <property name="hbm2ddl.auto">update</property>
     <mapping class="hibernate.UserEntity"/>
     <mapping class="hibernate.UserProfileEntity"/>
+    <mapping class="hibernate.RelationshipsEntity"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

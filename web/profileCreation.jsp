@@ -15,7 +15,8 @@
 %>
 <html id="create_profile_page">
 <head>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
     <title>Create profile</title>
 
     <%
@@ -50,11 +51,11 @@
         <a href="homepage.jsp"><img id="mini_logo" src="images/logo.png"></a>
         <a href="editProfile.jsp">
             <div id="edit_profile" class="menu_item">
-                <div class="small_profile_picture"><img src="<%=bean.getServingURL(bean.getProfile().getImage1())%>"></div>
+                <div class="small_profile_picture"></div>
                 <%=bean.getUser().getFirstName()%>
             </div>
         </a>
-        <div id="logout" class="menu_item">Logout</div>
+        <a href="logout.jsp"><div id="logout" class="menu_item">Logout</div></a>
     </nav>
 
     <div style="width: 80%; height: 510px; background-color: rgba(255, 255, 255, 0.9); position:absolute; top: 110px; left: 10%; border-radius: 10px;"></div>

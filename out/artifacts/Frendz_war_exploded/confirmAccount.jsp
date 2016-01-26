@@ -11,8 +11,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html id="confirm_account_page">
 <head>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <title>Confirm account</title>
+    <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
+    <title>frendz</title>
 
     <script>
         function checkPassword(){
@@ -27,8 +28,7 @@
 </head>
 <body id="bgr" class="center">
 
-<div class="container">
-    <div class="form">
+    <div class="form center-vertical">
         <img id="logo" src="images/logo.png">
         <%
             UserBeanBean bean = new UserBeanBean();
@@ -48,7 +48,6 @@
         </form>
 
     </div>
-</div>
 
 </body>
 </html>

@@ -10,9 +10,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <title>Frendz</title>
+    <title>frendz</title>
 
     <%
                 UserBeanBean bean = (UserBeanBean)request.getSession().getAttribute("bean");
@@ -35,7 +36,7 @@
                 <%=bean.getUser().getFirstName()%>
             </div>
         </a>
-        <div id="logout" class="menu_item">Logout</div>
+        <a href="logout.jsp"><div id="logout" class="menu_item">Logout</div></a>
     </nav>
     <%--show school name--%>
     <div id="school_title" class="title">Högskolan Kristianstad</div>
@@ -67,8 +68,16 @@
         </div>
     </div>
 
-  <div id="chatArea"></div>
+    <script>
+        if(document.body.offsetWidth > 1000)
+            document.getElementById("browse_button").style.top = document.body.offsetWidth * 0.3 - 165;
+        else
+            document.getElementById("browse_button").style.top = document.body.offsetWidth * 0.3 + 50;
 
+        $(document).ready(function(){
+            $("#browse_button").hide(0).delay(200).fadeIn(300);
+        });
+    </script>
 </body>
 
 <script src="js/index.js"></script>

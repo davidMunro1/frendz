@@ -58,6 +58,9 @@ public class FrendzServlet extends HttpServlet {
         } else if(request.getParameter("button").equalsIgnoreCase("save")){
             System.out.println("edit profile");
             handleEditProfile(request, response);
+        } else if(request.getParameter("button").equalsIgnoreCase("invite")) {
+            System.out.println("invite");
+            handleInvitation(request, response);
         }
 
     }
@@ -239,7 +242,6 @@ public class FrendzServlet extends HttpServlet {
             Map<String, List<BlobKey>> blobs = blobStoreService.getUploads(request);
             if(blobs.size() > 0){
                 List<BlobKey> blobKey1 = blobs.get("image1");
-                System.out.println(request.getParameter("image1controller") + " size: " + blobKey1.size());
                 if(!blobKey1.isEmpty() && request.getParameter("image1controller") != null && !request.getParameter("image1controller").isEmpty()){
                     try{
                         bean.addImage(blobKey1.get(0).getKeyString(), 1);
@@ -284,14 +286,28 @@ public class FrendzServlet extends HttpServlet {
                         System.out.println("Error uploading new image 5");
                     }
                 }
-            }
-            if(blobs.size() == 0)
+            } else {
                 pictureUploadSuccess = true;
+            }
         }catch (Exception ee){
             System.out.println("Error in adding image : " +ee.getMessage());
         }
 
         return pictureUploadSuccess;
+    }
+
+    private void handleInvitation(HttpServletRequest request, HttpServletResponse response){
+        if(bean == null){
+            bean = new UserBeanBean();
+            request.getSession().setAttribute("bean", bean);
+        }
+        MailSender mailSender = new MailSender();
+        mailSender.sendInvitation(request.getParameter("email"), bean.getUser().getFirstName(), bean.getUser().getSecondName());
+        try {
+            response.sendRedirect("browse.jsp?invited=true");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -10,12 +10,13 @@
 <html lang="en" id="login_page">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
-  <title></title>
+  <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+  <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
+  <title>frendz</title>
 </head>
 <body id="bgr" class="center">
 
-<div class="container">
+<%--<div class="container">--%>
     <%
       String error = "";
       if(request.getParameter("error") != null){
@@ -23,7 +24,7 @@
       }
       request.getSession().invalidate();
     %>
-  <div class="form">
+  <div class="form center-vertical">
     <img id="logo" src="images/logo.png">
     <div class="error_message">
       <%= error%>
@@ -35,7 +36,7 @@
     </form>
     <a href="signup.html"><div>Don't have an account yet? Sign up here!</div></a>
   </div>
-</div>
+<%--</div>--%>
 
 </body>
 </html>

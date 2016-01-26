@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+  <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
   <title>Mail confirmation sent!</title>
 </head>
 <body id="bgr" class="center">

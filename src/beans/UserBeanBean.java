@@ -258,17 +258,17 @@ public class UserBeanBean implements LocalUser, Serializable {
             tx = session.beginTransaction();
             UserEntity user = (UserEntity)session.get(UserEntity.class, getUSER_ID());
             UserProfileEntity userProfile = (UserProfileEntity)session.get(UserProfileEntity.class, getUSER_ID());
-            if(!secondName.isEmpty()){
+            if(secondName != null && !secondName.isEmpty()){
                 user.setSecondName(secondName);
             }
-            if(!password.isEmpty()){
+            if(password != null && !password.isEmpty()){
                 String hashPass = HashHelper.createHash(password);
                 user.setPassword(hashPass);
             }
-            if(!programme.isEmpty()){
+            if(programme != null && !programme.isEmpty()){
                 userProfile.setProgramme(programme);
             }
-            if(!bio.isEmpty()){
+            if(bio != null && !bio.isEmpty()){
                 userProfile.setBio(bio);
             }
             session.update(user);

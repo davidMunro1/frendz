@@ -17,7 +17,8 @@
 %>
 <html id="edit_profile_page">
 <head>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(min-width:1001px)" type="text/css" href="style/style.css">
+    <link rel="stylesheet" media="(max-width:1000px)" type="text/css" href="style/style_small.css">
     <title>Edit profile</title>
 
     <%
@@ -39,7 +40,7 @@
                 <%=bean.getUser().getFirstName()%>
             </div>
         </a>
-        <div id="logout" class="menu_item">Logout</div>
+        <a href="logout.jsp"><div id="logout" class="menu_item">Logout</div></a>
     </nav>
 
     <div style="width: 80%; height: 510px; background-color: rgba(255, 255, 255, 0.9); position:absolute; top: 110px; left: 10%; border-radius: 10px;"></div>
@@ -130,7 +131,7 @@
             </div>
             </div>
 
-            <input id="button" type="submit" name="button" value="Save">
+            <input id="editProfile_button" type="submit" name="button" value="Save">
         </form>
     </div>
     </div>
